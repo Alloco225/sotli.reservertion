@@ -1,0 +1,145 @@
+:root {
+    /* Colors */
+    --blanc: #f0f0f0;
+    --super-bleu: #3490dc;
+    --bleu: #64c9ea;
+    --bleu-pale: rgba(100, 201, 234, 0.6);
+    --bleu-sombre: #54a1bb;
+    --gris: #a4a4a4;
+    --noir: #222;
+    /* Fonts */
+    --ropa: "Ropa Sans", sans-serif;
+    --oswald: "Oswald", sans-serif;
+    --montserrat: "Montserrat", sans-serif;
+    --architect: "Architects Daughter", cursive;
+}
+/* Colors */
+.text-blanc {
+    color: var(--blanc) !important;
+}
+.text-bleu {
+    color: var(--bleu) !important;
+}
+.text-bleu-sombre {
+    color: var(--bleu-sombre) !important;
+}
+.text-gris {
+    color: var(--gris) !important;
+}
+.text-noir {
+    color: var(--noir) !important;
+}
+.text-super-bleu {
+    color: var(--super-bleu) !important;
+}
+/* Backgrounds */
+.bg-blanc {
+    background-color: var(--blanc) !important;
+}
+.bg-bleu {
+    background-color: var(--bleu) !important;
+}
+.bg-bleu-sombre {
+    background-color: var(--bleu-sombre) !important;
+}
+.bg-gris {
+    background-color: var(--gris) !important;
+}
+.bg-noir {
+    background-color: var(--noir) !important;
+}
+.bg-super-bleu {
+    background-color: var(--super-bleu) !important;
+}
+
+/*  */
+a {
+    color: var(--super-bleu) !important;
+    font-weight: bold;
+    font-family: var(--ropa) !important;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--architect) !important;
+}
+img {
+    transition: ease-out 0.5s;
+}
+img:hover {
+    transform: scale(1.2);
+}
+p {
+    color: var(--gris);
+}
+body {
+    background-color: #efefef !important;
+}
+
+/*  */
+.appname {
+    font-size: 2rem;
+    font-family: var(--architect);
+}
+.btn {
+    color: var(--blanc) !important;
+}
+.wow {
+    visibility: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    box-shadow: 1px 1px 6px 2px #222;
+}
+.navbar-brand:hover {
+    color: var(--bleu) !important;
+}
+.navbar .nav-link {
+    /* color: var(--bleu) !important; */
+    font-family: var(--architect) !important;
+    padding: 15px;
+}
+.navbar .nav-link:hover {
+    background: var(--bleu);
+    color: var(--blanc) !important;
+}
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+.dropdown > .dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
+/* CAROUSEL */
+.carousel-inner {
+    height: 30rem !important;
+}
+.carousel-item {
+    height: 30rem !important;
+}
+
+.carousel-indicators {
+    transform: translateX(-50%);
+}
+
+/* .carousel-indicators li {
+    border-radius: 50% !important; 
+} */
+/* Media Queries */
+
+@media screen and (max-width: 321px) {
+}
+@media screen and (max-width: 321px) {
+}
+@media screen and (max-width: 321px) {
+}
+@media screen and (max-width: 321px) {
+}
+@media screen and (max-width: 321px) {
+}

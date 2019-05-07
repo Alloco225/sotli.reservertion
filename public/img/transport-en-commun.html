@@ -1,0 +1,3411 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html lang="fr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+    
+    <meta property="og:title" content="Transport en commun" />
+    <meta property="og:description" content="" />
+    
+    <meta property="og:type" content="page" />
+    <meta property="article:pubished_time" content="" />
+    <meta property="og:url" content="https://www.calvados.fr/cms/render/live/fr/sites/calvados/accueil/le-departement/routes-environnement--territoire/se-deplacer-autrement/transport-en-commun.html" />
+    
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Transport en commun</title>
+    
+        <link rel="icon" href="/files/live/sites/calvados/files/documents/images/favicon.ico"/>
+    
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-127757904-1', {'cookieExpires': 31536000});
+ga('send', 'pageview','/cms/render/live/fr/sites/calvados/accueil/le-departement/routes-environnement--territoire/se-deplacer-autrement/transport-en-commun.html');
+
+
+</script>
+
+
+<script type="text/javascript">
+var contextJsParameters={contextPath:"",lang:"fr",uilang:"fr",siteUuid:"05869f91-a064-4512-b789-994d202000ca",wcag:true,ckeCfg:""}; var CKEDITOR_BASEPATH="/modules/ckeditor/javascript/"; var scayt_custom_params=new Array(); scayt_custom_params['sLang']='fr_FR';
+</script>
+<link id="staticAssetCSS0" rel="stylesheet" href="/generated-resources/30c121f978ce93d59b1eaee7ec21db8.min.css" media="all" type="text/css"/>
+<link id="staticAssetCSS1" rel="stylesheet" href="/generated-resources/18f0808f5e42aac638449843c68b6bca.min.css" media="screen" type="text/css"/>
+<link id="staticAssetCSS2" rel="stylesheet" href="/generated-resources/e9b08629517d6470dad47c35447ada.min.css" media="all" type="text/css"/>
+<script id="staticAssetJavascript0" type="text/javascript" src="/generated-resources/3012cbbf46d050f31265ad3e6468b57a.min.js"></script>
+
+	<script type="text/javascript">	
+	$(document).ready(function () {		
+
+		
+		function parseStringForNumber(sentence){
+		    var matches = sentence.match(/(\+|-)?((\d+(\.\d+)?)|(\.\d+))/);
+		    return matches && matches[0] || null;
+		}
+		
+		
+		function applyFontSize(val){			
+			var fontSizeUnit = "px";
+			Cookies.set("calvados_fontSize_d7b4f2cb-e587-4e44-aa3c-a08afdb46ed1",val,10000);
+			$('body .bodywrapper').css( 'font-size' , String(val + fontSizeUnit) );	
+		}
+		
+		
+		var increment = Number(2.0);
+		var max = Number(12);
+		var min = Number(8);
+		var fontSizeCookie = Cookies.get("calvados_fontSize_d7b4f2cb-e587-4e44-aa3c-a08afdb46ed1");
+		
+		
+		if(fontSizeCookie != null){
+			applyFontSize(fontSizeCookie);
+		}
+		
+			
+		
+		$( document).on('click','.cal_reduire-police' ,function() {
+			var fontSizeStr = $('body .bodywrapper').css('font-size');
+			var currentFontSize =  Number(parseStringForNumber(fontSizeStr));			
+			var value = eval(currentFontSize - increment);
+			if(value >= min){
+				applyFontSize(value);
+			}
+		})
+		
+			
+		$( document ).on('click','.cal_augmenter-police',function() {				
+			var fontSizeStr = $('body .bodywrapper').css('font-size');
+			var currentFontSize =  Number(parseStringForNumber(fontSizeStr));			
+			var value = eval(currentFontSize + increment);
+			if(value <= max){
+				applyFontSize(value);
+			}
+		})
+	})
+	</script>
+
+
+	<script type="text/javascript">
+	$(document).ready(function () {
+		$('header .cal_sous-menu div[data-id]').hide();
+	    /**
+	     * Menu mobile apparait Ã  gauche
+	     */
+	    $('.cal_bouton-menu').sidr({
+            source: '#sidr',
+            renaming: false,
+            renamingIdsOnly: true
+        });
+
+	    $(document).on('click', '.cal_mobile .close-menu', function(){
+	        $.sidr('close');	
+	    });
+
+	    /**
+	     * Menu position fixe au scroll
+	     */
+	    $('.cal_desktop.cal_nav-principale').affix({
+	        offset: {
+	            top: function () {
+	                return (this.top = $('.cal_nav-secondaire').outerHeight(true))
+	            }
+	        }
+	    });
+
+		var dataId;
+		var icon;
+
+		$('header .cal_sous-menu .cal_element-sous-menu').hover(function (e) {
+			$(this).show();
+		}, function (e) {
+			dataId = null;
+			$('header .cal_nav-principale .cal_liens a').removeClass('active');
+			$('header .cal_sous-menu div[data-id]').hide();
+		});
+
+		$('header .cal_nav-principale .cal_liens li.cal_lien').hover(function (e) {
+		    if(!($('header .cal_nav-principale .cal_liens li.cal_recherche.recherche_native a').hasClass('active'))){
+                $('header .cal_nav-principale .cal_liens a').removeClass('active');
+                $('header .cal_sous-menu div[data-id]').hide();
+                dataId = $(this).find('a').attr('data-id');
+                $(this).find('a').addClass('active');
+                $('header .cal_sous-menu div[data-id="' + dataId + '"]').slideDown(500);
+                $('header .cal_nav-principale .cal_liens li.cal_recherche.recherche_native a .cal_icone').removeClass('lnr-cross').addClass('lnr-magnifier');
+                $('header .cal_nav-principale .cal_liens li.annuaireOrganigramme a .lnr').removeClass('lnr-cross')
+                    .addClass('lnr-'+$('header .cal_nav-principale .cal_liens li.annuaireOrganigramme').find('a').attr('data-icone'));
+            }
+		}, function (e) {
+			dataId = null;
+			$('header .cal_sous-menu .cal_element-sous-menu[data-id]').hide();
+		});
+
+		$('header .cal_nav-principale .cal_liens li.cal_recherche.recherche_native').click(function (e) {
+			if ($(this).find('a').hasClass('active')) {
+				$('header .cal_sous-menu div[data-id]').hide();
+				$(this).find('a').removeClass('active').find('.cal_icone').removeClass('lnr-cross').addClass('lnr-magnifier');
+			} else {
+				$('header .cal_nav-principale .cal_liens a').removeClass('active');
+				dataId = $(this).find('a').attr('data-id');
+				$('header .cal_sous-menu div[data-id]').hide();
+				$(this).find('a').addClass('active').find('.cal_icone').removeClass('lnr-magnifier').addClass('lnr-cross');
+				$('header .cal_nav-principale .cal_liens li.annuaireOrganigramme a .lnr').removeClass('lnr-cross')
+					.addClass('lnr-'+$('header .cal_nav-principale .cal_liens li.annuaireOrganigramme').find('a').attr('data-icone'));
+				$('header .cal_sous-menu div[data-id="' + dataId + '"]').show();
+				$('header .cal_nav-principale .cal_sous-menu div[data-id="' + dataId + '"] input[id$=searchTerm]').first().focus();
+			}
+		});
+
+		$('header .cal_nav-principale .cal_liens li.annuaireOrganigramme').click(function (e) {
+			if ($(this).find('a').hasClass('active')) {
+				$('header .cal_sous-menu div[data-id]').hide();
+				$(this).find('a').removeClass('active').find('.lnr').removeClass('lnr-cross').addClass('lnr-'+$(this).find('a').attr('data-icone'));
+			} else {
+				$('header .cal_nav-principale .cal_liens a').removeClass('active');
+				dataId = $(this).find('a').attr('data-id');
+				$('header .cal_sous-menu div[data-id]').hide();
+				$(this).find('a').addClass('active').find('.lnr').removeClass('lnr-'+$(this).find('a').attr('data-icone')).addClass('lnr-cross');
+				$('header .cal_nav-principale .cal_liens li.cal_recherche.recherche_native a .cal_icone').removeClass('lnr-cross').addClass('lnr-magnifier');
+				$('header .cal_sous-menu div[data-id="' + dataId + '"]').show();
+				$('header .cal_nav-principale .cal_sous-menu div[data-id="' + dataId + '"] input[id$=searchTerm-annuaire]')[0].focus();
+			}
+		});
+
+	})
+	</script>
+
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                
+
+                cookiesModule.bootstrap(
+                    "cookieConsent_calvados",
+                    "www.calvados.fr",
+                    "Notre site utilise des cookies pour améliorer votre navigation, acceptez-vous leur utilisation&nbsp;?",
+                    "Je refuse",
+                    "J'accepte",
+                    "En savoir plus",
+                    "https://www.calvados.fr/accueil/page-cookies.html"
+                );
+
+            });
+        </script>
+    
+<script id="staticAssetAggregatedJavascriptList0" type="text/javascript">
+var jASAJ=jASAJ || new Array();
+jASAJ.push('/modules/templates-calvados/javascript/cookies_module.js');
+jASAJ.push('/modules/calvados-static-assets/javascript/cookieconsent.js');
+jASAJ.push('/modules/calvados-static-assets/javascript/modernizr-2.8.3-respond-1.4.2.min.js');
+jASAJ.push('/modules/jquery/javascript/jquery-1.12.4.min.js');
+jASAJ.push('/modules/assets/javascript/jquery.jahia.min.js');
+jASAJ.push('/modules/bootstrap3-core/javascript/bootstrap.min.js');
+jASAJ.push('/modules/calvados-static-assets/javascript/bootstrap.offcanvas.js');
+jASAJ.push('/modules/calvados-static-assets/javascript/masonry.pkgd.min.js');
+jASAJ.push('/modules/calvados-static-assets/javascript/imagesloaded.pkgd.js');
+jASAJ.push('/modules/calvados-static-assets/javascript/general.js');
+jASAJ.push('/modules/calvados-static-assets/javascript/sidr/jquery.sidr.js');
+jASAJ.push('/modules/calvados-cartographie/javascript/js.cookie.js');
+</script>
+
+</head>
+
+<body>
+<div id="bodywrapper" class="bodywrapper ">
+    
+
+
+
+
+    <header>
+
+
+
+
+
+    <div class="cal_nav-secondaire hidden-xs">
+
+    <div class="container-fluid">
+
+
+
+
+
+    <div class="cal_reseaux-sociaux">
+<div class="reseaux-sociaux" >
+     <a href="https://www.facebook.com/so14tellementCalvados/" target="_blank" title="La page Facebook So14 tellement Calvados">
+	
+
+	<img src="/files/live/sites/calvados/files/documents/images/logo-facebook-gris.png" alt="reference-dimage"  height="14"  width="8" />
+	
+		</a><a href="https://twitter.com/calvadosdep" target="_blank" title="Le compte Twitter du Département du Calvados">
+	
+
+	<img src="/files/live/sites/calvados/files/documents/images/logo-twitter-gris.png" alt="reference-dimage-1"  height="14"  width="16" />
+	
+		</a><a href="https://plus.google.com/u/0/+CalvadosFrcalvadosdepartement" target="_blank" title="Le compte Google+ du Département">
+	
+
+	<img src="/files/live/sites/calvados/files/documents/images/logo-google-plus-gris.png" alt="reference-dimage-2"  height="17"  width="17" />
+	
+		</a><a href="https://www.instagram.com/calvadosdepartement/" target="_blank" title="Le compte Instagram du Département">
+	
+
+	<img src="/files/live/sites/calvados/files/documents/images/logo-instagram-gris.png" alt="reference-dimage-3"  height="14"  width="15" />
+	
+		</a><div class="clear"></div>
+</div><div class="clear"></div><div class="clear"></div>
+    <div class="clearfix"></div>
+
+
+    </div>
+
+
+
+
+    <div class="cal_liens">
+
+
+
+<div class="cal_police">
+	<a href="#" class="cal_reduire-police" title="Diminuer la taille de la police">
+    	A
+	</a>
+	<a href="#" class="cal_augmenter-police" title="Augmenter la taille de la police">
+    	A
+	</a>
+</div>
+
+<div class="cal_mag fond-couleur1">
+	<a href="http://emag.calvados.fr" target="_blank" title="Le magazine numérique du Département du calvados">
+		
+
+	<span class="lnr lnr-book"></span>
+		<span class="libelle">L&#039;E-mag</span>	
+		
+	</a>
+
+</div>
+
+
+<div class="linkListMenu dropdown">
+	<a class="dropdown-toggle" type="button" id="tousNosSites" aria-labelledby="tousNosSitesLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Déployer le menu">
+		
+
+	<span class="lnr lnr-laptop-phone"></span>
+			<span class="cal_libelle" id="tousNosSitesLabel">Tous nos sites Web</span> 		
+		
+		<span class="cal_fleche lnr lnr-chevron-down"></span>
+	</a>
+	
+	
+			    <ul class="dropdown-menu" aria-labelledby="tousNosSites">
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="/mdph" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-wheelchair"></span>
+		<span class="libelle">MDPH du Calvados</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="https://www.fibre-calvados.fr" target="_parent" title="Fibre Calvados-Normandie" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-rocket"></span>
+		<span class="libelle">Fibre Calvados-Normandie</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="https://www.vieuxlaromaine.fr" target="_blank" title="Le site du musée de Vieux-la-Romaine" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-cog"></span>
+		<span class="libelle">Vieux-la-Romaine</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="https://archives.calvados.fr/accueil.html" target="_blank" title="Accédez au site des archives départementales" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-tag"></span>
+		<span class="libelle">Archives départementales</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="https://www.calvados.fr/budget2018" target="_blank" title="Accéder à la datavisualisation du budget 2018" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-pie-chart"></span>
+		<span class="libelle">Dataviz du Budget 2018</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="https://teleservices.calvados.fr/" target="_blank" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-laptop-phone"></span>
+		<span class="libelle">Portail de Téléservices</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="http://www.calvados-tourisme.com/" target="_blank" title="Consulter le site de Calvados Attractivité" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-sun"></span>
+		<span class="libelle">Calvados Attractivité</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="http://bibliotheque.calvados.fr" target="_blank" title="Le site de la Bibliothèque du Calvados" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-book"></span>
+		<span class="libelle">Bibliothèque du Calvados</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="http://www.laboratoire-labeo.fr" target="_blank" title="Le site de LABÉO, pôle d’analyses et de recherche de Normandie" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-license"></span>
+		<span class="libelle">LABÉO</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="http://www.agrilocal14.fr" target="_blank" title="Le site d&#039;Agrilocal 14" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-dinner"></span>
+		<span class="libelle">Agrilocal 14</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="http://www.mapeo-calvados.fr/" target="_blank" title="Le site Mapéo Calvados" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-map-marker"></span>
+		<span class="libelle">Mapéo Calvados</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="https://www.calvados-ingenierie.fr" target="_blank" title="Calvados ingénierie" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-users"></span>
+		<span class="libelle">Calvados ingénierie</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="http://veille-collectivite.calvados.fr/" target="_blank" title="Portail de veille du département" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-eye"></span>
+		<span class="libelle">Portail de veille du Calvados</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="http://www.caue14.com" target="_blank" title="Le site du Conseil d&#039;architecture d&#039;urbanisme et de l&#039;environnement du Calvados" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-apartment"></span>
+		<span class="libelle">CAUE du Calvados</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="http://www.calvados-habitat.fr" target="_blank" title="Le site de Calvados Habitat" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-home"></span>
+		<span class="libelle">Calvados Habitat</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="https://www.data.gouv.fr/fr/organizations/departement-du-calvados/" target="_blank" title="Le Département ouvre ses données" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-database"></span>
+		<span class="libelle">Opendata</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="https://www.inforoute14.fr/" target="_blank" title="Inforoute 14" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-car"></span>
+		<span class="libelle">Inforoute 14</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			    </ul>
+			
+
+	<div class="clear"></div>
+	
+</div>
+
+<a class="liensIcone entete" href="/pres-de-chez-vous">
+	
+
+	<span class="lnr lnr-map-marker"></span>
+	<span class="libelle">Près de chez vous</span>	
+	
+</a>
+
+
+
+
+
+<div class="cookiesChoice texte-blanc blockhover-couleur3 fond-couleur3 hover-fond-blanc privacy">
+<a href="#" class="customColorsMenuItem" onclick="cookiesModule.toggleChoicePopup(); return false;" title="Paramètres de vie privée">
+	<span class="lnr lnr-lock" aria-hidden="true"></span>
+</a>
+</div>
+
+
+<div class="loginMenu dropdown">
+	<a class="dropdown-toggle" type="button" id="loginDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Déployer le menu">
+		<span class="glyphicon glyphicon-off"></span> <span class="libelle visible-xs-inline">Menu de connexion</span>
+	</a>
+		
+    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="loginDropdown">
+    
+			
+					<li>
+						<a href="https://sso.calvados.fr/cas/login?service=https%3A%2F%2Fwww.calvados.fr%2Fcms%2Frender%2Flive%2Ffr%2Fsites%2Fcalvados%2Faccueil%2Fle-departement%2Fsolidarite---familles%2Fenfance--familles.html" title="Se rendre sur la page de connexion"><span class="glyphicon glyphicon-log-in"></span><span class="libelle">Se connecter</span></a>
+					</li>
+			    
+			        
+	</ul>
+
+
+	
+
+
+	<div class="clear"></div>
+</div><div class="clear"></div><div class="clear"></div>
+    <div class="clearfix"></div>
+
+
+    </div><div class="clear"></div>
+    </div>
+
+    <div class="clearfix"></div>
+
+
+    </div>
+
+<nav arial-label="Menu de navigation" class="cal_nav-principale cal_desktop hidden-xs">
+
+	 <div class="cal_logo">
+	 	
+		 	<a href="/accueil.html" title="Aller sur la page d'accueil">
+				<img src="/files/live/sites/calvados/files/documents/images/logo-calvados-transparent.png" alt="Logo Calvados - Le d&eacute;partement"/>
+			</a>
+		
+	</div>
+	
+		<ul class="cal_liens"><!-- 
+		     --><!--
+		    	--><!--
+		        --><li class="cal_lien couleur2">
+		        	
+		        </li><!--  
+		    --><!--
+		    	--><!--
+		        --><li class="cal_lien couleur2">
+		        	<a  data-id="9f11993a-8790-49dc-b90b-6b29c7e7cbc3" 
+	href="/accueil/le-departement.html" title="Aller sur la page :  Le Département">
+	Le département
+</a>
+		        </li><!--  
+		    --><!--
+		    	--><!--
+		        --><li class="cal_lien couleur3">
+		        	<a  data-id="c943989d-0aee-4f46-abe2-f5636d5ed895" 
+	href="/accueil/aides--services.html" title="Aller sur la page :  Aides & services">
+	Aides &amp; services
+</a>
+		        </li><!--  
+		    --><!--
+		    	--><!--
+		        --><li class="cal_lien couleur1">
+		        	<a  data-id="265b26fb-2fcd-4e39-8824-c39fd6823d27" 
+	href="/accueil/toute-linfo.html" title="Aller sur la page :  Toute l'info">
+	Toute l&#039;info
+</a>
+		        </li><!--  
+		    --><!--
+		   --> <!-- 
+		     --><li class="cal_recherche recherche_native"><!--
+	        	--><a data-id="search" title="Ouvrir la recherche"><!--
+					 --><span class="cal_icone lnr lnr-magnifier"></span><!--
+				--></a><!-- 
+			 --></li>
+		</ul>	
+	
+	<div class="clearfix"></div>
+
+
+	<div class="cal_sous-menu">
+		<div data-id="9f11993a-8790-49dc-b90b-6b29c7e7cbc3" class="cal_element-sous-menu fond-couleur2-transparent-60">
+	<div class="container">
+		<div class="fond-blanc">
+			<div class="row row-eq-height">
+				<div class="col-sm-3 fond-couleur2">
+					
+							<ul class="cal_barre-laterale fond-couleur2">
+
+								
+										<li>
+											
+												<a href="/accueil/le-departement/linstitution.html" title="Aller sur la page : L&#039;institution">
+													L&#039;institution
+												</a>
+											
+											<ul>
+												
+													<li>
+														
+															<a href="/accueil/le-departement/linstitution/biographie-du-president.html" title="Aller sur la page : Biographie du président">
+																Biographie du président
+															</a>
+														
+													</li>
+												
+													<li>
+														
+															<a href="/accueil/le-departement/linstitution/discours-du-president-1.html" title="Aller sur la page : Discours du président">
+																Discours du président
+															</a>
+														
+													</li>
+												
+													<li>
+														
+															<a href="/accueil/le-departement/linstitution/la-commission-permanente.html" title="Aller sur la page : La commission permanente">
+																La commission permanente
+															</a>
+														
+													</li>
+												
+													<li>
+														
+															<a href="/accueil/le-departement/linstitution/les-commissions-de-lassemblee.html" title="Aller sur la page : Les commissions de l&#039;Assemblée">
+																Les commissions de l&#039;Assemblée
+															</a>
+														
+													</li>
+												
+													<li>
+														
+															<a href="/accueil/le-departement/linstitution/budget.html" title="Aller sur la page : Budget">
+																Budget
+															</a>
+														
+													</li>
+												
+													<li>
+														
+															<a href="/accueil/le-departement/linstitution/les-services-departementaux.html" title="Aller sur la page : Les services départementaux">
+																Les services départementaux
+															</a>
+														
+													</li>
+												
+													<li>
+														
+															<a href="/accueil/le-departement/linstitution/expression-libre.html" title="Aller sur la page : Expression libre">
+																Expression libre
+															</a>
+														
+													</li>
+												
+													<li>
+														
+															<a href="/conseillers-departementaux" title="Aller sur la page : Les élus">
+																Les élus
+															</a>
+														
+													</li>
+												
+											</ul>
+										</li>
+									
+										<li>
+											
+												<a href="/accueil/le-departement/le-territoire.html" title="Aller sur la page : Le territoire">
+													Le territoire
+												</a>
+											
+											<ul>
+												
+													<li>
+														
+															<a href="/accueil/le-departement/le-territoire/atouts-economiques.html" title="Aller sur la page : Atouts économiques">
+																Atouts économiques
+															</a>
+														
+													</li>
+												
+													<li>
+														
+															<a href="/accueil/le-departement/le-territoire/chiffres-cles.html" title="Aller sur la page : Chiffres clés">
+																Chiffres clés
+															</a>
+														
+													</li>
+												
+													<li>
+														
+															<a href="/accueil/le-departement/le-territoire/les-territoires-1.html" title="Aller sur la page : Les territoires">
+																Les territoires
+															</a>
+														
+													</li>
+												
+													<li>
+														
+															<a href="/accueil/le-departement/le-territoire/les-cantons.html" title="Aller sur la page : Les cantons">
+																Les cantons
+															</a>
+														
+													</li>
+												
+											</ul>
+										</li>
+									
+							</ul>
+						
+				</div>
+				<div class="col-sm-9">
+					<div class="mainArea">
+						
+
+
+<div class="col-md-3">
+
+<div class="childPageRetrieval">
+	
+		<div class="childPageRetrievalImageWrapper">
+    		<img src="/files/live/sites/calvados/files/documents/images/factice/accueil/image-dune-famille-calvadosienne" alt="Image d'une famille calvadosienne" />
+    	</div>  
+          
+    <div class="cal_titre">
+    	
+	        <a href="/accueil/le-departement/solidarite---familles.html" title="Aller sur la page : Solidarité  & Familles">
+	        	Solidarité et familles	
+	         </a>
+         
+    </div>	
+    <ul>
+    			
+			       <li>
+													
+						<a href="/accueil/le-departement/solidarite---familles/enfance--familles.html" title="Aller sur la page : Enfance & familles">
+							Enfance &amp; familles
+						</a>
+					
+			       </li>
+					
+			       <li>
+													
+						<a href="/autonomie" title="Aller sur la page : Autonomie & Handicap">
+							Autonomie &amp; Handicap
+						</a>
+					
+			       </li>
+					
+			       <li>
+													
+						<a href="/emploi-insertion" title="Aller sur la page : Emploi & insertion">
+							Emploi &amp; insertion
+						</a>
+					
+			       </li>
+					
+			       <li>
+													
+						<a href="/accueil/le-departement/solidarite---familles/aide-au-logement.html" title="Aller sur la page : Aide au logement">
+							Aide au logement
+						</a>
+					
+			       </li>
+					
+			       <li>
+													
+						<a href="/travail-social-et-numerique" title="Aller sur la page : Travail social et numérique">
+							Travail social et numérique
+						</a>
+					
+			       </li>
+			
+    </ul>
+</div><div class="clear"></div></div>
+        <div class="col-md-3">
+
+<div class="childPageRetrieval">
+	
+		<div class="childPageRetrievalImageWrapper">
+    		<img src="/files/live/sites/calvados/files/documents/images/factice/accueil/troupe-de-theatre-itinerante" alt="Troupe de théâtre itinérante" />
+    	</div>  
+          
+    <div class="cal_titre">
+    	
+	        <a href="/accueil/le-departement/culture-sport--tourisme.html" title="Aller sur la page : Culture, Sport & Tourisme">
+	        	Culture, Sport et Tourisme	
+	         </a>
+         
+    </div>	
+    <ul>
+    			
+			       <li>
+													
+						<a href="/accueil/le-departement/culture-sport--tourisme/acces-a-la-culture.html" title="Aller sur la page : Accès à la culture">
+							Accès à la culture
+						</a>
+					
+			       </li>
+					
+			       <li>
+													
+						<a href="/accueil/le-departement/culture-sport--tourisme/connaissance-du-patrimoine.html" title="Aller sur la page : Connaissance du patrimoine">
+							Connaissance du patrimoine
+						</a>
+					
+			       </li>
+					
+			       <li>
+													
+						<a href="/calvados-attractivite" title="Aller sur la page : Calvados Attractivité">
+							Calvados Attractivité
+						</a>
+					
+			       </li>
+					
+			       <li>
+													
+						<a href="/accueil/le-departement/culture-sport--tourisme/vie-associative.html" title="Aller sur la page : Vie associative">
+							Vie associative
+						</a>
+					
+			       </li>
+					
+			       <li>
+													
+						<a href="/accueil/le-departement/culture-sport--tourisme/jumelages.html" title="Aller sur la page : Jumelages">
+							Jumelages
+						</a>
+					
+			       </li>
+					
+			       <li>
+													
+						<a href="/accueil/le-departement/culture-sport--tourisme/sport-1.html" title="Aller sur la page : Sport dans le Calvados">
+							Sport dans le Calvados
+						</a>
+					
+			       </li>
+			
+    </ul>
+</div><div class="clear"></div></div>
+        <div class="col-md-3">
+
+<div class="childPageRetrieval">
+	
+		<div class="childPageRetrievalImageWrapper">
+    		<img src="/files/live/sites/calvados/files/documents/images/factice/accueil/eleves-de-college-du-calvados" alt="Elèves de collège du calvados" />
+    	</div>  
+          
+    <div class="cal_titre">
+    	
+	        <a href="/accueil/le-departement/jeunesse--colleges.html" title="Aller sur la page : Jeunesse & collèges">
+	        	Jeunesse et collèges	
+	         </a>
+         
+    </div>	
+    <ul>
+    			
+			       <li>
+													
+						<a href="/accueil/le-departement/jeunesse--colleges/gestion-des-colleges-1.html" title="Aller sur la page : Gestion des collèges">
+							Gestion des collèges
+						</a>
+					
+			       </li>
+					
+			       <li>
+													
+						<a href="/accueil/le-departement/jeunesse--colleges/vie-au-college.html" title="Aller sur la page : Vie au collège">
+							Vie au collège
+						</a>
+					
+			       </li>
+					
+			       <li>
+													
+						<a href="/accueil/le-departement/jeunesse--colleges/dispositifs-jeunesse-sur-le-temp.html" title="Aller sur la page : Dispositifs Jeunesse sur le temps des loisirs">
+							Dispositifs Jeunesse sur le temps des loisirs
+						</a>
+					
+			       </li>
+			
+    </ul>
+</div><div class="clear"></div></div>
+        <div class="col-md-3">
+
+<div class="childPageRetrieval">
+	
+		<div class="childPageRetrievalImageWrapper">
+    		<img src="/files/live/sites/calvados/files/documents/images/factice/accueil/image-dun-engin-de-chantier-rout" alt="Image d'un engin de chantier routier" />
+    	</div>  
+          
+    <div class="cal_titre">
+    	
+	        <a href="/accueil/le-departement/routes-environnement--territoire.html" title="Aller sur la page : Routes, environnement & territoire">
+	        	Routes, environnement et territoires	
+	         </a>
+         
+    </div>	
+    <ul>
+    			
+			       <li>
+													
+						<a href="/accueil/le-departement/routes-environnement--territoire/routes--voiries.html" title="Aller sur la page : Routes & voiries">
+							Routes &amp; voiries
+						</a>
+					
+			       </li>
+					
+			       <li>
+													
+						<a href="/accueil/le-departement/routes-environnement--territoire/se-deplacer-autrement.html" title="Aller sur la page : Se déplacer autrement">
+							Se déplacer autrement
+						</a>
+					
+			       </li>
+					
+			       <li>
+													
+						<a href="/accueil/le-departement/routes-environnement--territoire/amenagement-du-territoire.html" title="Aller sur la page : Aménagement du territoire">
+							Aménagement du territoire
+						</a>
+					
+			       </li>
+					
+			       <li>
+													
+						<a href="/accueil/le-departement/routes-environnement--territoire/environnement--milieux-naturels.html" title="Aller sur la page : Environnement & milieux naturels">
+							Environnement &amp; milieux naturels
+						</a>
+					
+			       </li>
+					
+			       <li>
+													
+						<a href="/accueil/le-departement/routes-environnement--territoire/agriculture--activites-maritimes.html" title="Aller sur la page : Agriculture & activités maritimes">
+							Agriculture &amp; activités maritimes
+						</a>
+					
+			       </li>
+					
+			       <li>
+													
+						<a href="/accueil/le-departement/routes-environnement--territoire/securite-publique.html" title="Aller sur la page : Sécurité publique">
+							Sécurité publique
+						</a>
+					
+			       </li>
+					
+			       <li>
+													
+						<a href="/accueil/le-departement/routes-environnement--territoire/fibre-calvados-normandie.html" title="Aller sur la page : Fibre Calvados-Normandie">
+							Fibre Calvados-Normandie
+						</a>
+					
+			       </li>
+			
+    </ul>
+</div><div class="clear"></div></div>
+    <div class="clearfix"></div><div class="clear"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><div data-id="c943989d-0aee-4f46-abe2-f5636d5ed895" class="cal_element-sous-menu fond-couleur3-transparent-60">
+	<div class="container">
+		<div class="fond-blanc">
+			<div class="row row-eq-height">
+				<div class="col-sm-3 fond-couleur3">
+					
+							<div class="cal_barre-laterale">
+								
+
+
+<div class="cal_liste_menu">
+
+	
+		<ul>
+	        
+	                <li><span class="liensIcone cal_menu_lien" >
+	<a href="https://www.fibre-calvados.fr/accueil/particuliers/je-teste-mon-eligibilite.html" target="_blank">
+	
+
+	<span class="lnr lnr-construction"></span>
+		<span class="libelle">Testez votre éligibilité à la Fibre</span>	
+		
+		
+	</a>
+</span></li>
+	        
+	                <li><span class="liensIcone cal_menu_lien" >
+	<a href="/accueil/espace-marches-publics.html">
+	
+
+	<span class="lnr lnr-checkmark-circle"></span>
+		<span class="libelle">Espace marchés publics</span>	
+		
+		
+	</a>
+</span></li>
+	        
+	                <li><span class="liensIcone cal_menu_lien" >
+	<a href="/espace-emploi">
+	
+
+	<span class="lnr lnr-inbox"></span>
+		<span class="libelle">Espace emploi</span>	
+		
+		
+	</a>
+</span></li>
+	        
+	                <li><span class="liensIcone cal_menu_lien" >
+	<a href="/contents/fiche/fiches-aide--services/cd14---fiche-daides-7.html">
+	
+
+	<span class="lnr lnr-store"></span>
+		<span class="libelle">Ventes aux enchères</span>	
+		
+		
+	</a>
+</span></li>
+	        
+	                <li><span class="liensIcone cal_menu_lien" >
+	<a href="/contents/fiche/fiches-aide--services/inforoute.html">
+	
+
+	<span class="lnr lnr-car"></span>
+		<span class="libelle">Inforoute</span>	
+		
+		
+	</a>
+</span></li>
+	        
+		</ul>
+	
+</div>
+
+
+<div class="clear"></div><div class="clear"></div>
+							</div>
+						
+				</div>
+				<div class="col-sm-9">
+					<div class="mainArea">
+						
+
+
+
+    <div class="row">
+<div class="col-md-4">
+
+
+<div class="cal_liste_menu">
+
+	
+		<h3 class=" hover-couleur3 texte-couleur3">
+			
+	         <a href="/accueil/aides--services.html" title="Aides & services">
+	        Services en ligne
+	         </a>
+	        
+	    </h3>
+	
+		<ul>
+	        
+	                <li><span class="liensIcone cal_menu_lien" >
+	<a href="/contents/fiche/fiches-aide--services/trouver-une-assistante-maternell.html">
+	
+
+	<span class="lnr lnr-map-marker"></span>
+		<span class="libelle">Où trouver une assistante maternelle</span>	
+		
+		
+	</a>
+</span></li>
+	        
+	                <li><span class="liensIcone cal_menu_lien" >
+	<a href="/contents/fiche/fiches-aide--services/lapa-en-ligne.html">
+	
+
+	<span class="lnr lnr-user"></span>
+		<span class="libelle">APA - Demande en ligne</span>	
+		
+		
+	</a>
+</span></li>
+	        
+	                <li><span class="liensIcone cal_menu_lien" >
+	<a href="/contents/fiche/fiches-aide--services/viatrajectoire.html">
+	
+
+	<span class="lnr lnr-apartment"></span>
+		<span class="libelle">Via trajectoire</span>	
+		
+		
+	</a>
+</span></li>
+	        
+	                <li><span class="liensIcone cal_menu_lien" >
+	<a href="/contents/fiche/fiches-aide--services/cd14---fiche-daides.html">
+	
+
+	<span class="lnr lnr-wheelchair"></span>
+		<span class="libelle">Demande en ligne à la MDPH</span>	
+		
+		
+	</a>
+</span></li>
+	        
+	                <li><span class="liensIcone cal_menu_lien" >
+	<a href="/contents/fiche/fiches-aide--services/demande-de-carte-de-transport-sc.html">
+	
+
+	<span class="lnr lnr-bus"></span>
+		<span class="libelle">Carte de transport scolaire</span>	
+		
+		
+	</a>
+</span></li>
+	        
+	                <li><span class="liensIcone cal_menu_lien" >
+	<a href="/contents/fiche/fiches-aide--services/agrilocal14.html">
+	
+
+	<span class="lnr lnr-dinner"></span>
+		<span class="libelle">Agrilocal</span>	
+		
+		
+	</a>
+</span></li>
+	        
+	                <li><span class="liensIcone cal_menu_lien" >
+	<a href="/contents/fiche/fiches-aide--services/payer-en-ligne-vos-services-publ.html">
+	
+
+	<span class="lnr lnr-cloud-check"></span>
+		<span class="libelle">Payer en ligne vos services publics</span>	
+		
+		
+	</a>
+</span></li>
+	        
+	                <li><span class="liensIcone cal_menu_lien" >
+	<a href="/contents/fiche/fiches-aide--services/geocollege-calvados.html">
+	
+
+	<span class="lnr lnr-map"></span>
+		<span class="libelle">Géocollèges Calvados</span>	
+		
+		
+	</a>
+</span></li>
+	        
+	                <li><span class="liensIcone cal_menu_lien" >
+	<a href="/contents/fiche/fiches-aide--services/leduc-de-normandie-ent.html">
+	
+
+	<span class="lnr lnr-graduation-hat"></span>
+		<span class="libelle">L&#039;ENT : L&#039;Educ de Normandie</span>	
+		
+		
+	</a>
+</span></li>
+	        
+	                <li><span class="liensIcone cal_menu_lien" >
+	<a href="/contents/fiche/fiches-aide--services/reseau-dinclusion-numerique.html">
+	
+
+	<span class="lnr lnr-laptop-phone"></span>
+		<span class="libelle">Réseau d&#039;inclusion numérique</span>	
+		
+		
+	</a>
+</span></li>
+	        
+		</ul>
+	
+</div>
+
+
+<div class="clear"></div><div class="clear"></div></div>
+        <div class="col-md-8">
+
+    	    
+        <a class="imageReferenceLinkEnhanced"       		
+        	style="background-image: url('/files/live/sites/calvados/files/documents/images/aides%20%26%20services/clasped-hands-comfort-hands-people-45842(1).jpeg')" 
+        	alt="cd14---reference-dimage" 
+        	href="/accueil/aides--services.html" title="Aller sur la page : Aides & services">
+     	
+	     	<div class="fond-transparent  fond-couleur3 opacity-50"></div>
+
+	<span class="lnr lnr-star"></span>
+		    <span class="cal_libelle">       
+		    	<p>Les fiches d&#39;aides et services</p>
+
+		    </span>
+        </a>
+
+    	    
+        <a class="imageReferenceLinkEnhanced"       		
+        	style="background-image: url('/files/live/sites/calvados/files/documents/images/aides%20%26%20services/Annuaire%20pratique(1).png')" 
+        	alt="Annuaire-pratique" 
+        	href="/pres-de-chez-vous" title="Aller sur la page : Annuaire pratique">
+     	
+	     	<div class="fond-transparent  fond-couleur3 opacity-60"></div>
+
+	<span class="lnr lnr-map-marker"></span>
+		    <span class="cal_libelle">       
+		    	<p>Annuaire pratique</p>
+
+		    </span>
+        </a>
+
+
+<div class="cal_liste_menu">
+
+	
+		<h3 class=" hover-couleur3 texte-couleur3">
+			
+	         <a href="/accueil/faq.html" title="FAQ">
+	        Foire aux questions
+	         </a>
+	        
+	    </h3>
+	
+</div>
+
+
+<div class="clear"></div>
+
+
+<section aria-label="paragraphe 566bd742-cde0-4745-b44a-528ccb4618e3" class="conteneurBiseaux-redactionnel  texte-noir hover-couleur3">
+
+	
+	
+	<div class="paragraphe">
+			<div class="" >
+				
+			</div>
+	</div>
+
+	
+	
+	
+	
+</section>      
+
+<div class="clearfix"></div>
+
+
+<section aria-label="paragraphe dcd481de-ff9c-4042-ac42-fc5c9229e289" class="conteneurBiseaux-redactionnel  texte-noir hover-couleur3">
+
+	
+	
+	<div class="paragraphe">
+			<div class="" >
+				
+			</div>
+	</div>
+
+	
+	
+	
+	
+</section>      
+
+<div class="clearfix"></div><div class="clear"></div></div>
+    </div>    
+
+    <div class="clearfix"></div><div class="clear"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><div data-id="265b26fb-2fcd-4e39-8824-c39fd6823d27" class="cal_element-sous-menu fond-couleur1-transparent-60">
+	<div class="container">
+		<div class="fond-blanc">
+			<div class="row row-eq-height">
+				<div class="col-sm-3 fond-couleur1">
+					
+							<div class="cal_barre-laterale">
+								
+
+
+<div class="cal_date-courante">
+    <div class="cal_titre">
+        Aujourd'hui
+    </div>
+    <div class="cal_jour-semaine">
+        lundi
+    </div>
+    	
+    <div class="cal-jour-mois">
+        <span class="cal_jour">11</span>/<span class="cal_mois">03</span>
+    </div>
+</div>
+
+
+
+<div class="cal_actualites">
+	<div class="hide">
+		
+	</div>
+	
+			<div class="cal_liste-actualites">
+				
+
+
+<div class="cal_evenement">
+    <div class="cal_intitule">
+       Événement à venir :
+    </div>
+    <div class="cal_date-lieu">
+   		 Le&nbsp;
+        12 mars&nbsp;
+        à&nbsp;
+        Saint-Remy
+    </div>
+    
+	    <div class="cal_titre">
+	        Bus 0-6 ans - PMI : consultations à Saint-Rémy-sur-Orne
+	    </div>
+    
+    <a href="/contents/openagenda/events/2019/3/12/99674309.html" class="cal_voir-plus" title="Découvrir l'événement : Bus 0-6 ans - PMI : consultations à Saint-Rémy-sur-Orne">
+        <span class="cal_icone lnr lnr-arrow-right"></span>
+        <span class="cal_libelle">Découvrir</span>
+    </a>
+
+    <div class="clearfix"></div>
+</div>
+			</div>
+			
+				<div class="clear"></div>
+			
+
+</div><div class="clear"></div>
+							</div>
+						
+				</div>
+				<div class="col-sm-9">
+					<div class="mainArea">
+						
+
+
+
+<div class="cal_actualites">
+	<div class="hide">
+		
+	</div>
+	
+			<div class="cal_liste-actualites">
+				
+
+
+<div class="actualites-aLaUneMenu">
+	<div class="cal_intitule">
+	    À la une actuellement :
+	</div>
+	
+	<a href="/actu/calvados-au-sia-2019" class="cal_a-la-une" title="Aller sur la page : Le Calvados au Salon International de l'Agriculture 2019">
+	    <div class="cal_date">
+	        Le&nbsp;22 février 2019
+	    </div>
+	    <div class="cal_titre">
+	    	Le Calvados au Salon International de l&#039;Agriculture 2019
+	    </div>
+	</a>
+</div>
+			</div>
+			
+				<div class="clear"></div>
+			
+
+</div>
+
+
+<div class="col-md-3">
+
+<div class="childPageRetrieval">
+	
+		<div class="childPageRetrievalImageWrapper">
+    		<img src="/files/live/sites/calvados/files/documents/images/factice/accueil/image-du-palmares-du-prix-bayeux" alt="Image du palmares du prix bayeux calvados" />
+    	</div>  
+          
+    <div class="cal_titre">
+    	
+	        <a href="/accueil/toute-linfo/actualites.html" title="Aller sur la page : Actualités">
+	        	Actualités	
+	         </a>
+         
+    </div>	
+    <ul>
+    	
+    </ul>
+</div><div class="richtext">
+	<p><span style="font-size:14px;">D&eacute;couvrez l&#39;ensemble des actualit&eacute;s du D&eacute;partement.</span></p>
+
+</div><div class="clear"></div></div>
+        <div class="col-md-3">
+
+<div class="childPageRetrieval">
+	
+		<div class="childPageRetrievalImageWrapper">
+    		<img src="/files/live/sites/calvados/files/documents/images/factice/accueil/troupe-de-theatre-itinerante" alt="Troupe de théâtre itinérante" />
+    	</div>  
+          
+    <div class="cal_titre">
+    	
+	        <a href="/accueil/toute-linfo/agenda.html" title="Aller sur la page : Agenda">
+	        	Agenda	
+	         </a>
+         
+    </div>	
+    <ul>
+    	
+    </ul>
+</div><div class="richtext">
+	<p><span style="font-size:14px;">L&#39;agenda des &eacute;v&eacute;nements.</span></p>
+
+</div><div class="clear"></div></div>
+        <div class="col-md-3">
+
+<div class="childPageRetrieval">
+	
+		<div class="childPageRetrievalImageWrapper">
+    		<img src="/files/live/sites/calvados/files/documents/images/presse/homme-lisant-son-journal" alt="Homme lisant son journal" />
+    	</div>  
+          
+    <div class="cal_titre">
+    	
+	        <a href="/accueil/toute-linfo/dossiers-1.html" title="Aller sur la page : Espace presse">
+	        	Espace presse	
+	         </a>
+         
+    </div>	
+    <ul>
+    	
+    </ul>
+</div><div class="richtext">
+	<p><span style="font-size:14px;">Consultez les dossiers et communiqu&eacute;s de presse</span></p>
+
+</div><div class="clear"></div></div>
+        <div class="col-md-3">
+
+<div class="childPageRetrieval">
+	
+		<div class="childPageRetrievalImageWrapper">
+    		<img src="/files/live/sites/calvados/files/documents/images/medias/photo-dune-camera" alt="Photo d'une caméra" />
+    	</div>  
+          
+    <div class="cal_titre">
+    	
+	        <a href="/accueil/toute-linfo/multimedia.html" title="Aller sur la page : Espace multimédia">
+	        	Espace multimédia	
+	         </a>
+         
+    </div>	
+    <ul>
+    	
+    </ul>
+</div><div class="richtext">
+	<p><span style="font-size:14px;">Galeries photos, vid&eacute;os, podcasts.</span></p>
+
+</div><div class="clear"></div></div>
+    <div class="clearfix"></div><div class="clear"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><div data-id="search" class="cal_recherche-sous-menu fond-noir-transparent-60" role="search">
+	
+<form method="post" name="searchForm" action="/accueil/resultats-de-recherche.html" >
+    <input type="hidden" name="jcrMethodToCall" value="get" />
+    <input type="hidden" name="src_originSiteKey" value="calvados"/>
+    
+		<div class="row">
+			<div class="col-sm-10">
+				<label for="searchTerm" style="display:none;">Rechercher sur le site</label>
+				
+<input name="src_terms[0].term" id="searchTerm" placeholder="Que recherchez-vous ?" title="Champ de recherche" type="text"  value=""/>
+<input type="hidden" name="src_terms[0].applyFilter" value="true"/>
+
+    <input type="hidden" name="src_terms[0].match" value="all_words"/>
+
+    <input type="hidden" name="src_terms[0].fields.siteContent" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.tags" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.filename" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.description" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.keywords" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.title" value="true"/>
+<input type="hidden" name="src_sites.values" value="calvados"/>
+    <input type="hidden" name="src_sitesForReferences.values" value="systemsite"/>
+<input type="hidden" name="src_languages.values" value="fr"/>
+    <input type="hidden" name="src_itemsPerPage"  value="5"/>
+
+			</div>
+			<div class="col-sm-2">
+				<input type="submit" id="recherche-native" class="recherche-native" value="Rechercher" />
+			</div>
+		</div>
+	
+</form>
+	<div class="cal_mots-cles">
+		<a class="cal_mot-cle" onclick="$('.815d4ac8-c28f-4732-862b-b91b4e2e4f4a').submit();" title="Lancer une recherche sur : Prenons l'air">		
+		#Prenons l&#039;air
+<form method="post" name="searchForm" action="/accueil/resultats-de-recherche.html" class="815d4ac8-c28f-4732-862b-b91b4e2e4f4a" >
+    <input type="hidden" name="jcrMethodToCall" value="get" />
+    <input type="hidden" name="src_originSiteKey" value="calvados"/>
+    
+<input name="src_terms[0].term" type="hidden"  value="Prenons l&#039;air"/>
+<input type="hidden" name="src_terms[0].applyFilter" value="true"/>
+
+    <input type="hidden" name="src_terms[0].match" value="all_words"/>
+
+    <input type="hidden" name="src_terms[0].fields.siteContent" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.tags" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.filename" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.description" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.keywords" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.title" value="true"/>
+<input type="hidden" name="src_sites.values" value="calvados"/>
+    <input type="hidden" name="src_sitesForReferences.values" value="systemsite"/>
+<input type="hidden" name="src_languages.values" value="fr"/>
+</form>
+	</a><a class="cal_mot-cle" onclick="$('.f2b10972-98fb-4b66-9991-8e1ac1d33900').submit();" title="Lancer une recherche sur : Assistante Maternelle">		
+		#Assistante Maternelle
+<form method="post" name="searchForm" action="/accueil/resultats-de-recherche.html" class="f2b10972-98fb-4b66-9991-8e1ac1d33900" >
+    <input type="hidden" name="jcrMethodToCall" value="get" />
+    <input type="hidden" name="src_originSiteKey" value="calvados"/>
+    
+<input name="src_terms[0].term" type="hidden"  value="Assistante Maternelle"/>
+<input type="hidden" name="src_terms[0].applyFilter" value="true"/>
+
+    <input type="hidden" name="src_terms[0].match" value="all_words"/>
+
+    <input type="hidden" name="src_terms[0].fields.siteContent" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.tags" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.filename" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.description" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.keywords" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.title" value="true"/>
+<input type="hidden" name="src_sites.values" value="calvados"/>
+    <input type="hidden" name="src_sitesForReferences.values" value="systemsite"/>
+<input type="hidden" name="src_languages.values" value="fr"/>
+</form>
+	</a><a class="cal_mot-cle" onclick="$('.67207c12-0144-43e3-b1cb-f59cce752522').submit();" title="Lancer une recherche sur : Rentrée scolaire">		
+		#Rentrée scolaire
+<form method="post" name="searchForm" action="/accueil/resultats-de-recherche.html" class="67207c12-0144-43e3-b1cb-f59cce752522" >
+    <input type="hidden" name="jcrMethodToCall" value="get" />
+    <input type="hidden" name="src_originSiteKey" value="calvados"/>
+    
+<input name="src_terms[0].term" type="hidden"  value="Rentrée scolaire"/>
+<input type="hidden" name="src_terms[0].applyFilter" value="true"/>
+
+    <input type="hidden" name="src_terms[0].match" value="all_words"/>
+
+    <input type="hidden" name="src_terms[0].fields.siteContent" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.tags" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.filename" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.description" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.keywords" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.title" value="true"/>
+<input type="hidden" name="src_sites.values" value="calvados"/>
+    <input type="hidden" name="src_sitesForReferences.values" value="systemsite"/>
+<input type="hidden" name="src_languages.values" value="fr"/>
+</form>
+	</a><a class="cal_mot-cle" onclick="$('.2f7e35a6-5ef9-4de0-9380-f32ac7b3a663').submit();" title="Lancer une recherche sur : Aides collège">		
+		#Aides collège
+<form method="post" name="searchForm" action="/accueil/resultats-de-recherche.html" class="2f7e35a6-5ef9-4de0-9380-f32ac7b3a663" >
+    <input type="hidden" name="jcrMethodToCall" value="get" />
+    <input type="hidden" name="src_originSiteKey" value="calvados"/>
+    
+<input name="src_terms[0].term" type="hidden"  value="Aides collège"/>
+<input type="hidden" name="src_terms[0].applyFilter" value="true"/>
+
+    <input type="hidden" name="src_terms[0].match" value="all_words"/>
+
+    <input type="hidden" name="src_terms[0].fields.siteContent" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.tags" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.filename" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.description" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.keywords" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.title" value="true"/>
+<input type="hidden" name="src_sites.values" value="calvados"/>
+    <input type="hidden" name="src_sitesForReferences.values" value="systemsite"/>
+<input type="hidden" name="src_languages.values" value="fr"/>
+</form>
+	</a><a class="cal_mot-cle" onclick="$('.ca16c431-32a3-4d93-a5c6-2a290b21f469').submit();" title="Lancer une recherche sur : Fibre Optique">		
+		#Fibre Optique
+<form method="post" name="searchForm" action="/accueil/resultats-de-recherche.html" class="ca16c431-32a3-4d93-a5c6-2a290b21f469" >
+    <input type="hidden" name="jcrMethodToCall" value="get" />
+    <input type="hidden" name="src_originSiteKey" value="calvados"/>
+    
+<input name="src_terms[0].term" type="hidden"  value="Fibre Optique"/>
+<input type="hidden" name="src_terms[0].applyFilter" value="true"/>
+
+    <input type="hidden" name="src_terms[0].match" value="all_words"/>
+
+    <input type="hidden" name="src_terms[0].fields.siteContent" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.tags" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.filename" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.description" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.keywords" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.title" value="true"/>
+<input type="hidden" name="src_sites.values" value="calvados"/>
+    <input type="hidden" name="src_sitesForReferences.values" value="systemsite"/>
+<input type="hidden" name="src_languages.values" value="fr"/>
+</form>
+	</a>
+	</div>
+</div> 
+	</div>
+</nav>
+
+
+
+
+<div class="visible-xs-block cal_mobile">
+    <div class="cal_reseaux-sociaux">
+<div class="reseaux-sociaux" >
+     <a href="https://www.facebook.com/so14tellementCalvados/" target="_blank" title="La page Facebook So14 tellement Calvados">
+	
+
+	<img src="/files/live/sites/calvados/files/documents/images/logo-facebook-gris.png" alt="reference-dimage"  height="14"  width="8" />
+	
+		</a><a href="https://twitter.com/calvadosdep" target="_blank" title="Le compte Twitter du Département du Calvados">
+	
+
+	<img src="/files/live/sites/calvados/files/documents/images/logo-twitter-gris.png" alt="reference-dimage-1"  height="14"  width="16" />
+	
+		</a><a href="https://plus.google.com/u/0/+CalvadosFrcalvadosdepartement" target="_blank" title="Le compte Google+ du Département">
+	
+
+	<img src="/files/live/sites/calvados/files/documents/images/logo-google-plus-gris.png" alt="reference-dimage-2"  height="17"  width="17" />
+	
+		</a><a href="https://www.instagram.com/calvadosdepartement/" target="_blank" title="Le compte Instagram du Département">
+	
+
+	<img src="/files/live/sites/calvados/files/documents/images/logo-instagram-gris.png" alt="reference-dimage-3"  height="14"  width="15" />
+	
+		</a><div class="clear"></div>
+</div><div class="clear"></div>
+    </div>
+    
+    <a type="button" class="cal_bouton-menu navbar-toggle" data-target="#sidr" title="Ouvrir le menu">
+        <span class="cal_titre">
+        	Menu
+        </span>
+        <span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </span>
+    </a>
+
+    <div class="cal_logo">        
+                
+		 	<a href="/accueil.html" title="Aller sur la page d'accueil">
+				<img src="/files/live/sites/calvados/files/documents/images/logo-calvados-transparent.png" alt="Logo Calvados - Le d&eacute;partement"/>
+			</a>
+		
+    </div>
+    <div id="sidr" class="cal_menu-gauche">
+        <div class="close-menu">
+            <span class="lnr lnr-cross"></span>
+        </div>
+        <nav class="cal_nav-principale" role="navigation">
+            <ul class="cal_liens" id="liens">
+            	<li class="cal_recherche noir panel">
+ 					<a class="cal_title" data-toggle="collapse" data-target="#recherche" aria-expanded="false" aria-controls="recherche" data-parent="#liens"
+	title="Ouvrir la recherche">
+	Recherche
+	<span class="cal_fleche lnr lnr-magnifier"></span>
+</a>
+
+
+
+<div class="collapse recherche" id="recherche">
+	
+<form method="post" name="searchForm" action="/accueil/resultats-de-recherche.html" >
+    <input type="hidden" name="jcrMethodToCall" value="get" />
+    <input type="hidden" name="src_originSiteKey" value="calvados"/>
+    
+<input name="src_terms[0].term" id="searchTerm" placeholder="Que recherchez-vous ?" title="Champ de recherche" type="text"  value=""/>
+<input type="hidden" name="src_terms[0].applyFilter" value="true"/>
+
+    <input type="hidden" name="src_terms[0].match" value="all_words"/>
+
+    <input type="hidden" name="src_terms[0].fields.siteContent" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.tags" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.files" value="true"/>
+<input type="hidden" name="src_sites.values" value="calvados"/>
+    <input type="hidden" name="src_sitesForReferences.values" value="systemsite"/>
+<input type="hidden" name="src_languages.values" value="fr"/>
+		<div id="recherche-mobile-wrapper" class="recherche-mobile-wrapper">
+			<input type="submit" id="recherche-native-mobile" class="recherche-native-mobile" value="Rechercher" />
+		</div>
+	
+</form>
+
+	<ul class="cal_mots-cles">
+		
+			<li>
+				<a class="cal_mot-cle" onclick="$('.815d4ac8-c28f-4732-862b-b91b4e2e4f4a').submit();" title="Lancer une recherche sur : Prenons l'air">		
+		#Prenons l&#039;air
+<form method="post" name="searchForm" action="/accueil/resultats-de-recherche.html" class="815d4ac8-c28f-4732-862b-b91b4e2e4f4a" >
+    <input type="hidden" name="jcrMethodToCall" value="get" />
+    <input type="hidden" name="src_originSiteKey" value="calvados"/>
+    
+<input name="src_terms[0].term" type="hidden"  value="Prenons l&#039;air"/>
+<input type="hidden" name="src_terms[0].applyFilter" value="true"/>
+
+    <input type="hidden" name="src_terms[0].match" value="all_words"/>
+
+    <input type="hidden" name="src_terms[0].fields.siteContent" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.tags" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.filename" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.description" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.keywords" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.title" value="true"/>
+<input type="hidden" name="src_sites.values" value="calvados"/>
+    <input type="hidden" name="src_sitesForReferences.values" value="systemsite"/>
+<input type="hidden" name="src_languages.values" value="fr"/>
+</form>
+	</a>
+			</li>
+		
+			<li>
+				<a class="cal_mot-cle" onclick="$('.f2b10972-98fb-4b66-9991-8e1ac1d33900').submit();" title="Lancer une recherche sur : Assistante Maternelle">		
+		#Assistante Maternelle
+<form method="post" name="searchForm" action="/accueil/resultats-de-recherche.html" class="f2b10972-98fb-4b66-9991-8e1ac1d33900" >
+    <input type="hidden" name="jcrMethodToCall" value="get" />
+    <input type="hidden" name="src_originSiteKey" value="calvados"/>
+    
+<input name="src_terms[0].term" type="hidden"  value="Assistante Maternelle"/>
+<input type="hidden" name="src_terms[0].applyFilter" value="true"/>
+
+    <input type="hidden" name="src_terms[0].match" value="all_words"/>
+
+    <input type="hidden" name="src_terms[0].fields.siteContent" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.tags" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.filename" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.description" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.keywords" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.title" value="true"/>
+<input type="hidden" name="src_sites.values" value="calvados"/>
+    <input type="hidden" name="src_sitesForReferences.values" value="systemsite"/>
+<input type="hidden" name="src_languages.values" value="fr"/>
+</form>
+	</a>
+			</li>
+		
+			<li>
+				<a class="cal_mot-cle" onclick="$('.67207c12-0144-43e3-b1cb-f59cce752522').submit();" title="Lancer une recherche sur : Rentrée scolaire">		
+		#Rentrée scolaire
+<form method="post" name="searchForm" action="/accueil/resultats-de-recherche.html" class="67207c12-0144-43e3-b1cb-f59cce752522" >
+    <input type="hidden" name="jcrMethodToCall" value="get" />
+    <input type="hidden" name="src_originSiteKey" value="calvados"/>
+    
+<input name="src_terms[0].term" type="hidden"  value="Rentrée scolaire"/>
+<input type="hidden" name="src_terms[0].applyFilter" value="true"/>
+
+    <input type="hidden" name="src_terms[0].match" value="all_words"/>
+
+    <input type="hidden" name="src_terms[0].fields.siteContent" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.tags" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.filename" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.description" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.keywords" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.title" value="true"/>
+<input type="hidden" name="src_sites.values" value="calvados"/>
+    <input type="hidden" name="src_sitesForReferences.values" value="systemsite"/>
+<input type="hidden" name="src_languages.values" value="fr"/>
+</form>
+	</a>
+			</li>
+		
+			<li>
+				<a class="cal_mot-cle" onclick="$('.2f7e35a6-5ef9-4de0-9380-f32ac7b3a663').submit();" title="Lancer une recherche sur : Aides collège">		
+		#Aides collège
+<form method="post" name="searchForm" action="/accueil/resultats-de-recherche.html" class="2f7e35a6-5ef9-4de0-9380-f32ac7b3a663" >
+    <input type="hidden" name="jcrMethodToCall" value="get" />
+    <input type="hidden" name="src_originSiteKey" value="calvados"/>
+    
+<input name="src_terms[0].term" type="hidden"  value="Aides collège"/>
+<input type="hidden" name="src_terms[0].applyFilter" value="true"/>
+
+    <input type="hidden" name="src_terms[0].match" value="all_words"/>
+
+    <input type="hidden" name="src_terms[0].fields.siteContent" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.tags" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.filename" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.description" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.keywords" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.title" value="true"/>
+<input type="hidden" name="src_sites.values" value="calvados"/>
+    <input type="hidden" name="src_sitesForReferences.values" value="systemsite"/>
+<input type="hidden" name="src_languages.values" value="fr"/>
+</form>
+	</a>
+			</li>
+		
+			<li>
+				<a class="cal_mot-cle" onclick="$('.ca16c431-32a3-4d93-a5c6-2a290b21f469').submit();" title="Lancer une recherche sur : Fibre Optique">		
+		#Fibre Optique
+<form method="post" name="searchForm" action="/accueil/resultats-de-recherche.html" class="ca16c431-32a3-4d93-a5c6-2a290b21f469" >
+    <input type="hidden" name="jcrMethodToCall" value="get" />
+    <input type="hidden" name="src_originSiteKey" value="calvados"/>
+    
+<input name="src_terms[0].term" type="hidden"  value="Fibre Optique"/>
+<input type="hidden" name="src_terms[0].applyFilter" value="true"/>
+
+    <input type="hidden" name="src_terms[0].match" value="all_words"/>
+
+    <input type="hidden" name="src_terms[0].fields.siteContent" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.tags" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.filename" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.description" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.keywords" value="true"/>
+
+    <input type="hidden" name="src_terms[0].fields.title" value="true"/>
+<input type="hidden" name="src_sites.values" value="calvados"/>
+    <input type="hidden" name="src_sitesForReferences.values" value="systemsite"/>
+<input type="hidden" name="src_languages.values" value="fr"/>
+</form>
+	</a>
+			</li>
+		
+	</ul>
+</div>
+ 				</li>
+	 			<li class="cal_lien couleur2 panel" id="lien-lvl1-menuItem.hidden.dropdown.mobile.jsp">
+	
+
+	<div class="menu_mobile_wrapper">
+		
+				<a href="/accueil/le-departement.html" title="Aller sur la page :  : Le département">
+					Le département
+				</a>
+			
+
+			<span title="Ouvrir le menu : Le département" class="cal_fleche lnr lnr-chevron-down" data-toggle="collapse" data-target="#9f11993a-8790-49dc-b90b-6b29c7e7cbc3"
+				aria-expanded="false" aria-controls="9f11993a-8790-49dc-b90b-6b29c7e7cbc3" data-parent="#liens"></span>
+	</div>
+
+	
+	<ul class="cal_sous-menu collapse fond-couleur2" id="9f11993a-8790-49dc-b90b-6b29c7e7cbc3">
+
+		
+			<li>
+				
+								<div class="menu_mobile_wrapper">
+									<a href="/accueil/le-departement/linstitution.html" title="Aller sur la page : L&#039;institution">
+										L&#039;institution
+									</a>
+									<span class="cal_fleche lnr lnr-chevron-down dropdown-toggle" title="Ouvrir le menuL&#039;institution"
+										data-toggle="collapse" aria-controls="level26da9ed86-c6c7-4003-bb55-8c5e57ea1105" data-target="#level26da9ed86-c6c7-4003-bb55-8c5e57ea1105" data-parent="#lien-lvl1-menuItem.hidden.dropdown.mobile.jsp" role="button"
+										aria-expanded="false"></span>
+								</div>
+								<ul class="collapse" id="level26da9ed86-c6c7-4003-bb55-8c5e57ea1105">
+									
+										<li>
+											
+												<a href="/accueil/le-departement/linstitution/biographie-du-president.html" title="Aller sur la page : Biographie du président">
+													Biographie du président
+												</a>
+											
+										</li>
+									
+										<li>
+											
+												<a href="/accueil/le-departement/linstitution/discours-du-president-1.html" title="Aller sur la page : Discours du président">
+													Discours du président
+												</a>
+											
+										</li>
+									
+										<li>
+											
+												<a href="/accueil/le-departement/linstitution/la-commission-permanente.html" title="Aller sur la page : La commission permanente">
+													La commission permanente
+												</a>
+											
+										</li>
+									
+										<li>
+											
+												<a href="/accueil/le-departement/linstitution/les-commissions-de-lassemblee.html" title="Aller sur la page : Les commissions de l&#039;Assemblée">
+													Les commissions de l&#039;Assemblée
+												</a>
+											
+										</li>
+									
+										<li>
+											
+												<a href="/accueil/le-departement/linstitution/budget.html" title="Aller sur la page : Budget">
+													Budget
+												</a>
+											
+										</li>
+									
+										<li>
+											
+												<a href="/accueil/le-departement/linstitution/les-services-departementaux.html" title="Aller sur la page : Les services départementaux">
+													Les services départementaux
+												</a>
+											
+										</li>
+									
+										<li>
+											
+												<a href="/accueil/le-departement/linstitution/expression-libre.html" title="Aller sur la page : Expression libre">
+													Expression libre
+												</a>
+											
+										</li>
+									
+										<li>
+											
+												<a href="/conseillers-departementaux" title="Aller sur la page : Les élus">
+													Les élus
+												</a>
+											
+										</li>
+									
+								</ul>
+							
+			</li>
+		
+			<li>
+				
+								<div class="menu_mobile_wrapper">
+									<a href="/accueil/le-departement/le-territoire.html" title="Aller sur la page : Le territoire">
+										Le territoire
+									</a>
+									<span class="cal_fleche lnr lnr-chevron-down dropdown-toggle" title="Ouvrir le menuLe territoire"
+										data-toggle="collapse" aria-controls="level240acad63-7a44-440c-9334-013020c98eac" data-target="#level240acad63-7a44-440c-9334-013020c98eac" data-parent="#lien-lvl1-menuItem.hidden.dropdown.mobile.jsp" role="button"
+										aria-expanded="false"></span>
+								</div>
+								<ul class="collapse" id="level240acad63-7a44-440c-9334-013020c98eac">
+									
+										<li>
+											
+												<a href="/accueil/le-departement/le-territoire/atouts-economiques.html" title="Aller sur la page : Atouts économiques">
+													Atouts économiques
+												</a>
+											
+										</li>
+									
+										<li>
+											
+												<a href="/accueil/le-departement/le-territoire/chiffres-cles.html" title="Aller sur la page : Chiffres clés">
+													Chiffres clés
+												</a>
+											
+										</li>
+									
+										<li>
+											
+												<a href="/accueil/le-departement/le-territoire/les-territoires-1.html" title="Aller sur la page : Les territoires">
+													Les territoires
+												</a>
+											
+										</li>
+									
+										<li>
+											
+												<a href="/accueil/le-departement/le-territoire/les-cantons.html" title="Aller sur la page : Les cantons">
+													Les cantons
+												</a>
+											
+										</li>
+									
+								</ul>
+							
+			</li>
+		
+			<li>
+				
+			</li>
+		
+			<li>
+				
+			</li>
+		
+			<li>
+				
+			</li>
+		
+			<li>
+				
+			</li>
+		
+	</ul>
+	
+</li><li class="cal_lien couleur3 panel" id="lien-lvl1-menuItem.hidden.dropdown.mobile.jsp">
+	
+
+	<div class="menu_mobile_wrapper">
+		<a href="/accueil/aides--services.html" title="Aller sur la page :  Aides & services">
+	Aides &amp; services
+</a>
+
+			<span title="Ouvrir le menu : Aides &amp; services" class="cal_fleche lnr lnr-chevron-down" data-toggle="collapse" data-target="#c943989d-0aee-4f46-abe2-f5636d5ed895"
+				aria-expanded="false" aria-controls="c943989d-0aee-4f46-abe2-f5636d5ed895" data-parent="#liens"></span>
+	</div>
+
+	
+	<ul class="cal_sous-menu collapse fond-couleur3" id="c943989d-0aee-4f46-abe2-f5636d5ed895">
+
+		
+			<li>
+				
+							<a href="/accueil/aides--services.html" title="Aller sur la page : Aides &amp; services">
+								Aides &amp; services
+							</a>
+						
+			</li>
+		
+			<li>
+				
+							<a href="/pres-de-chez-vous" title="Aller sur la page : Annuaire pratique">
+								Annuaire pratique
+							</a>
+						
+			</li>
+		
+			<li>
+				
+							<a href="/espace-emploi" title="Aller sur la page : Espace emploi">
+								Espace emploi
+							</a>
+						
+			</li>
+		
+			<li>
+				
+							<a href="/accueil/espace-marches-publics.html" title="Aller sur la page : Espace marchés publics">
+								Espace marchés publics
+							</a>
+						
+			</li>
+		
+	</ul>
+	
+</li><li class="cal_lien couleur1 panel" id="lien-lvl1-menuItem.hidden.dropdown.mobile.jsp">
+	
+
+	<div class="menu_mobile_wrapper">
+		<a href="/accueil/toute-linfo.html" title="Aller sur la page :  Toute l'info">
+	Toute l&#039;info
+</a>
+
+			<span title="Ouvrir le menu : Toute l&#039;info" class="cal_fleche lnr lnr-chevron-down" data-toggle="collapse" data-target="#265b26fb-2fcd-4e39-8824-c39fd6823d27"
+				aria-expanded="false" aria-controls="265b26fb-2fcd-4e39-8824-c39fd6823d27" data-parent="#liens"></span>
+	</div>
+
+	
+	<ul class="cal_sous-menu collapse fond-couleur1" id="265b26fb-2fcd-4e39-8824-c39fd6823d27">
+
+		
+			<li>
+				
+							<a href="/accueil/toute-linfo/agenda.html" title="Aller sur la page : Agenda">
+								Agenda
+							</a>
+						
+			</li>
+		
+			<li>
+				
+							<a href="/accueil/toute-linfo/dossiers-1.html" title="Aller sur la page : Espace presse">
+								Espace presse
+							</a>
+						
+			</li>
+		
+			<li>
+				
+							<a href="/accueil/toute-linfo/multimedia.html" title="Aller sur la page : Espace multimédia">
+								Espace multimédia
+							</a>
+						
+			</li>
+		
+			<li>
+				
+							<a href="/accueil/toute-linfo/actualites.html" title="Aller sur la page : Actualités">
+								Actualités
+							</a>
+						
+			</li>
+		
+	</ul>
+	
+</li>
+            </ul>
+            <div class="clearfix"></div>
+        </nav>
+        <div class="cal_nav-secondaire">      
+        	<div class="cal_liens">
+            	<div class="cal_menu-secondaire"> 
+					
+
+
+<div class="cal_police">
+	<a href="#" class="cal_reduire-police" title="Diminuer la taille de la police">
+    	A
+	</a>
+	<a href="#" class="cal_augmenter-police" title="Augmenter la taille de la police">
+    	A
+	</a>
+</div>
+
+<div class="cal_mag fond-couleur1">
+	<a href="http://emag.calvados.fr" target="_blank" title="Le magazine numérique du Département du calvados">
+		
+
+	<span class="lnr lnr-book"></span>
+		<span class="libelle">L&#039;E-mag</span>	
+		
+	</a>
+
+</div>
+
+
+<div class="linkListMenu dropdown">
+	<a class="dropdown-toggle" type="button" id="tousNosSites" aria-labelledby="tousNosSitesLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Déployer le menu">
+		
+
+	<span class="lnr lnr-laptop-phone"></span>
+			<span class="cal_libelle" id="tousNosSitesLabel">Tous nos sites Web</span> 		
+		
+		<span class="cal_fleche lnr lnr-chevron-down"></span>
+	</a>
+	
+	
+			    <ul class="dropdown-menu" aria-labelledby="tousNosSites">
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="/mdph" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-wheelchair"></span>
+		<span class="libelle">MDPH du Calvados</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="https://www.fibre-calvados.fr" target="_parent" title="Fibre Calvados-Normandie" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-rocket"></span>
+		<span class="libelle">Fibre Calvados-Normandie</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="https://www.vieuxlaromaine.fr" target="_blank" title="Le site du musée de Vieux-la-Romaine" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-cog"></span>
+		<span class="libelle">Vieux-la-Romaine</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="https://archives.calvados.fr/accueil.html" target="_blank" title="Accédez au site des archives départementales" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-tag"></span>
+		<span class="libelle">Archives départementales</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="https://www.calvados.fr/budget2018" target="_blank" title="Accéder à la datavisualisation du budget 2018" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-pie-chart"></span>
+		<span class="libelle">Dataviz du Budget 2018</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="https://teleservices.calvados.fr/" target="_blank" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-laptop-phone"></span>
+		<span class="libelle">Portail de Téléservices</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="http://www.calvados-tourisme.com/" target="_blank" title="Consulter le site de Calvados Attractivité" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-sun"></span>
+		<span class="libelle">Calvados Attractivité</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="http://bibliotheque.calvados.fr" target="_blank" title="Le site de la Bibliothèque du Calvados" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-book"></span>
+		<span class="libelle">Bibliothèque du Calvados</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="http://www.laboratoire-labeo.fr" target="_blank" title="Le site de LABÉO, pôle d’analyses et de recherche de Normandie" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-license"></span>
+		<span class="libelle">LABÉO</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="http://www.agrilocal14.fr" target="_blank" title="Le site d&#039;Agrilocal 14" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-dinner"></span>
+		<span class="libelle">Agrilocal 14</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="http://www.mapeo-calvados.fr/" target="_blank" title="Le site Mapéo Calvados" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-map-marker"></span>
+		<span class="libelle">Mapéo Calvados</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="https://www.calvados-ingenierie.fr" target="_blank" title="Calvados ingénierie" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-users"></span>
+		<span class="libelle">Calvados ingénierie</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="http://veille-collectivite.calvados.fr/" target="_blank" title="Portail de veille du département" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-eye"></span>
+		<span class="libelle">Portail de veille du Calvados</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="http://www.caue14.com" target="_blank" title="Le site du Conseil d&#039;architecture d&#039;urbanisme et de l&#039;environnement du Calvados" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-apartment"></span>
+		<span class="libelle">CAUE du Calvados</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="http://www.calvados-habitat.fr" target="_blank" title="Le site de Calvados Habitat" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-home"></span>
+		<span class="libelle">Calvados Habitat</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="https://www.data.gouv.fr/fr/organizations/departement-du-calvados/" target="_blank" title="Le Département ouvre ses données" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-database"></span>
+		<span class="libelle">Opendata</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			            <li>
+			                
+
+<span class="liensIcone cal_lien" >
+	<a href="https://www.inforoute14.fr/" target="_blank" title="Inforoute 14" class="lien_dropdown hover-couleur3">
+	
+		
+
+	<span class="lnr lnr-car"></span>
+		<span class="libelle">Inforoute 14</span>	
+		
+		
+	</a>
+</span>
+			            </li>
+			        
+			    </ul>
+			
+
+	<div class="clear"></div>
+	
+</div>
+
+<a class="liensIcone entete" href="/pres-de-chez-vous">
+	
+
+	<span class="lnr lnr-map-marker"></span>
+	<span class="libelle">Près de chez vous</span>	
+	
+</a>
+
+
+
+
+
+<div class="cookiesChoice texte-blanc blockhover-couleur3 fond-couleur3 hover-fond-blanc privacy">
+<a href="#" class="customColorsMenuItem" onclick="cookiesModule.toggleChoicePopup(); return false;" title="Paramètres de vie privée">
+	<span class="lnr lnr-lock" aria-hidden="true"></span>
+</a>
+</div>
+
+
+<div class="loginMenu dropdown">
+	<a class="dropdown-toggle" type="button" id="loginDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="Déployer le menu">
+		<span class="glyphicon glyphicon-off"></span> <span class="libelle visible-xs-inline">Menu de connexion</span>
+	</a>
+		
+    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="loginDropdown">
+    
+			
+					<li>
+						<a href="https://sso.calvados.fr/cas/login?service=https%3A%2F%2Fwww.calvados.fr%2Fcms%2Frender%2Flive%2Ffr%2Fsites%2Fcalvados%2Faccueil%2Fle-departement%2Fsolidarite---familles%2Fenfance--familles.html" title="Se rendre sur la page de connexion"><span class="glyphicon glyphicon-log-in"></span><span class="libelle">Se connecter</span></a>
+					</li>
+			    
+			        
+	</ul>
+
+
+	
+
+
+	<div class="clear"></div>
+</div><div class="clear"></div>
+				</div>
+			</div>
+        </div>
+    </div>
+</div><div class="clear"></div><div class="clear"></div>
+    <div class="clearfix"></div>
+
+
+    </header><div class="clear"></div>
+
+		<div class="container">
+			<div class="cal_fil-ariane hover-couleur1">
+				<div class="fleft">
+					
+									<a href="/accueil.html" title="Consulter la page : Accueil" class="strong">
+										Accueil
+									</a>|&nbsp;
+								
+									<a href="/accueil/le-departement.html" title="Consulter la page : Le Département" >
+										Le Département
+									</a>|&nbsp;
+								
+									<a href="/accueil/le-departement/routes-environnement--territoire.html" title="Consulter la page : Routes, environnement & territoire" >
+										Routes, environnement &amp; territoire
+									</a>|&nbsp;
+								
+									<a href="/accueil/le-departement/routes-environnement--territoire/se-deplacer-autrement.html" title="Consulter la page : Se déplacer autrement" >
+										Se déplacer autrement
+									</a>|&nbsp;
+								Transport en commun
+				</div>
+
+				
+					<div class="fright">
+						<a href="javascript:history.back()" class="cal_btn-retour" title="Retourner à la page précédente">
+							<span class="cal_icone lnr lnr-arrow-left"></span>
+							<span class="cal_libelle">
+								Retour
+							</span>
+						</a>
+					</div>
+				
+			</div>
+			<div class="clearfix"></div>
+		</div><div class="clear"></div>
+
+
+<div id="cal_page-article-fiche">
+    <header>
+        <div class="container">
+            
+				<img src="/files/live/sites/calvados/files/documents/images/actions%20du%20d%c3%a9partement/le%20d%c3%a9partement/route%2c%20environnement%2c%20territoire/Se%20d%c3%a9placer%20autrement/Transports%20en%20commun/transports_commun_1140x530.jpg" alt="bus vert © Gregory Wait" class="img-responsive" />
+			
+			
+			<div class="cal_titre">
+			<div class="center">
+				
+			</div>
+				
+					<h1>Transport en commun</h1>
+				
+			</div>
+        </div>
+    </header>
+    
+    <section class="cal_presentation" aria-label="Surtitre de l'article">
+        <div class="container">
+	        
+            <div class="row">
+            
+		                <div class="col-sm-12">
+		            
+	                		<div class="cal_accroche">
+		                    	<div class="richtext"><p style="text-align: justify;">Le r&eacute;seau interurbain du Calvados compte 70 lignes r&eacute;guli&egrave;res qui transportent 60 % d&rsquo;usagers scolaires r&eacute;parties sur l&rsquo;ensemble du d&eacute;partement. Depuis le 1<sup>er</sup> septembre 2017, le D&eacute;partement a c&eacute;d&eacute; ces mission de transports scolaires et interurbains &agrave; la R&eacute;gion Normandie, &agrave; l&#39;exception du transport des &eacute;l&egrave;ves en situation de handicap.</p>
+</div>
+		                     </div>
+	                			
+	                </div>
+
+                
+            </div>
+        </div>
+    </section>
+    
+    <article>
+        <div class="container">
+
+            <header class="clearfix">
+                <div class="cal_date-auteur">
+					
+				</div>
+				<div class="cal_partage ">
+
+	Partager cet article : 
+	<div class="visible-xs-block"></div>
+
+	
+
+	<a href="mailto:?body=https%3a%2f%2fwww.calvados.fr%2faccueil%2fle-departement%2froutes-environnement--territoire%2fse-deplacer-autrement%2ftransport-en-commun.html" title="Partager par email">
+		
+		<img src="/modules/calvados-redactionnel/images/logo-mail-couleur1.png" role="presentation" aria-hidden="true" alt="Logo E-mail" />
+	</a>
+
+
+
+	
+
+	<a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.calvados.fr%2faccueil%2fle-departement%2froutes-environnement--territoire%2fse-deplacer-autrement%2ftransport-en-commun.html&t=Transport+en+commun" target="_blank" title="Partager sur facebook">
+		
+		<img src="/modules/calvados-redactionnel/images/logo-facebook-couleur1.png" role="presentation" aria-hidden="true" alt="Logo Facebook" />
+	</a>
+
+	
+
+	<a href="https://twitter.com/intent/tweet?text=Transport+en+commun&url=https%3a%2f%2fwww.calvados.fr%2faccueil%2fle-departement%2froutes-environnement--territoire%2fse-deplacer-autrement%2ftransport-en-commun.html" target="_blank" title="Partager sur twitter">
+		
+		<img src="/modules/calvados-redactionnel/images/logo-twitter-couleur1.png" role="presentation" aria-hidden="true" alt="Logo Twitter" />
+	</a>
+
+	
+
+	<a href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.calvados.fr%2faccueil%2fle-departement%2froutes-environnement--territoire%2fse-deplacer-autrement%2ftransport-en-commun.html&mini=true" target="_blank" title="Partager sur linkedin">
+		
+		<img src="/modules/calvados-redactionnel/images/logo-linkedin-couleur1.png" role="presentation" aria-hidden="true" alt="Logo linkedin" />
+	</a>
+
+	
+
+</div>
+            </header>
+        </div>
+		
+
+
+<div class="section cal_contenu">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1">
+			        			               	
+				
+
+
+<section aria-label="Transfert de la compétence à la Région" class="conteneurBiseaux-redactionnel  texte-noir hover-couleur3">
+
+	
+	
+	<div class="paragraphe">
+			<div class="" >
+				
+				      <h2 class="titreRedactionnel  texte-couleur1 ">
+				          Transfert de la compétence à la Région
+				      </h2>
+			    
+					<div class="richtext  texte-noir "><p>Conform&eacute;ment &agrave; la loi NOTRe, le D&eacute;partement du Calvados a transf&eacute;r&eacute; la comp&eacute;tence transports interurbains et celle des transports scolaires &agrave; la R&eacute;gion Normandie.</p>
+
+<p>Seul le transport des &eacute;l&egrave;ves handicap&eacute;s reste dans le giron d&eacute;partemental, et d&eacute;pend maintenant de la direction de l&rsquo;autonomie. <strong>Plus de 300 &eacute;l&egrave;ves en situation de handicap sont transport&eacute;s chaque ann&eacute;e par le D&eacute;partement. </strong>Celui-ci y consacre un budget de <strong>2 M&euro;</strong>.</p>
+
+<p>Malgr&eacute; le transfert de comp&eacute;tence &agrave; la R&eacute;gion, le D&eacute;partement a souhait&eacute; maintenir les engagements pris aupr&egrave;s des habitants de Caen-la-Mer et plus largement aupr&egrave;s de l&rsquo;ensemble des utilisateurs du r&eacute;seau de transport caennais, en subventionnant le projet du nouveau tramway &agrave; hauteur de 45 millions d&rsquo;euros.</p>
+
+<p>Au final, ce sont plus de&nbsp;36 millions d&#39;euros de charges nettes&nbsp;qui sont transf&eacute;r&eacute;es &agrave; la R&eacute;gion.</p>
+</div>
+				
+			</div>
+	</div>
+
+	
+	
+	
+	
+</section>      
+
+<div class="clearfix"></div>
+
+<a class="cal_bouton-lien" href="http://www.busverts.fr/" target="_blank">
+
+	    <span class="texte-couleur1">
+
+	<span class="lnr lnr-earth"></span></span>
+    
+        <span class="cal_libelle">
+			<span class="cal_multilignes">
+				Informations utiles sur le site des bus verts
+			</span>
+        </span>
+	
+    <div class="cal_nombre">
+        
+    </div>
+</a>			
+			
+			</div>	
+		</div>
+	</div>
+</div>
+
+<div class="clearfix"></div>
+
+
+
+    <div class="row">
+<div class="col-md-12"></div>
+    </div>    
+
+    <div class="clearfix"></div>
+
+
+<div class="section cal_contenu">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1">
+			        			               	
+				
+
+<a class="cal_bouton-lien" href="https://transports.normandie.fr/" target="_blank" title="Le site de la Région Normandie dédié aux transports">
+
+	    <span class="texte-couleur1">
+
+	<span class="lnr lnr-select"></span></span>
+    
+        <span class="cal_libelle">
+			<span class="cal_multilignes">
+				Demande de carte de transport 2017/2018
+			</span>
+        </span>
+	
+    <div class="cal_nombre">
+        
+    </div>
+</a>
+
+
+
+    <div>
+
+    <div class="row">
+<div class="col-md-12">
+
+
+
+    <div>
+
+    <div class="row">
+<div class="col-md-6"></div>
+        <div class="col-md-6">
+
+	<div class="cal_titre">À lire également</div>
+
+
+
+
+<a href="/accueil/le-departement/routes-environnement--territoire/se-deplacer-autrement/covoiturage/corps/les-aires-de-covoiturage-dans-le.html" class="aLireEgalement" title="Aller sur la page : Les aires de covoiturage dans le Calvados">
+
+		<div class="cal_image">
+			
+				<img src="/files/live/sites/calvados/files/documents/images/actions%20du%20d%c3%a9partement/le%20d%c3%a9partement/route%2c%20environnement%2c%20territoire/Se%20d%c3%a9placer%20autrement/Covoiturage/covoiturage_1140x537.jpg?t=thumbnail2" alt="panneau de signalisation d'un parking de covoiturage © CD14" class="img-responsive miniature"/>
+				
+				<div class="categories">
+					
+				</div>
+			
+		</div>
+		
+	
+		
+		
+			<h2 class="cal_titre-article">Les aires de covoiturage dans le Calvados</h2>
+		<p style="text-align: justify;"><br />
+Apr&egrave;s une &eacute;tude men&eacute;e en 2010 par le D&eacute;partement et l&rsquo;&Eacute;tat sur l&rsquo;ensemble des aires sauvages identifi&eacute;es par les Agences routi&egrave;res d&eacute;partementa...
+</a>
+	<div class="clear"></div><div class="clear"></div></div>
+    </div>    
+
+    <div class="clearfix"></div>
+
+
+    </div>
+
+
+<section aria-label="paragraphe 9390ebf1-2ac3-4fca-8142-8d34759f6576" class="conteneurBiseaux-redactionnel  texte-noir hover-couleur3">
+
+	
+	
+	<div class="paragraphe">
+			<div class="" >
+				
+					<div class="richtext  texte-noir "><p><span style="font-size:12px;">Image d&#39;en-t&ecirc;te : bus vert &copy; Gregory Wait</span></p>
+</div>
+				
+			</div>
+	</div>
+
+	
+	
+	
+	
+</section>      
+
+<div class="clearfix"></div><div class="clear"></div></div>
+    </div>    
+
+    <div class="clearfix"></div>
+
+
+    </div>			
+			
+			</div>	
+		</div>
+	</div>
+</div>
+
+<div class="clearfix"></div>                	
+
+        
+        <div class="container">
+        		 
+        	        	
+	            
+	    </div>		
+	    
+        <div class="container">
+            <footer class="clearfix">
+				
+					<div class="cal_tags">
+						Tags
+						:
+						
+								<form action="/accueil/le-departement/routes-environnement--territoire/se-deplacer-autrement/transport-en-commun/corps/transport-en-commun.recherche-textcontent.html" method="post">
+									<input type="hidden" name="tag" value="bus vert" />
+									<input type="hidden" name="jcrMethodToCall" value="GET" /> 
+									<input type="submit" value="bus vert" class="btn-link submit" />
+								</form>
+							
+								<form action="/accueil/le-departement/routes-environnement--territoire/se-deplacer-autrement/transport-en-commun/corps/transport-en-commun.recherche-textcontent.html" method="post">
+									<input type="hidden" name="tag" value="transfert compétence" />
+									<input type="hidden" name="jcrMethodToCall" value="GET" /> 
+									<input type="submit" value="transfert compétence" class="btn-link submit" />
+								</form>
+							
+								<form action="/accueil/le-departement/routes-environnement--territoire/se-deplacer-autrement/transport-en-commun/corps/transport-en-commun.recherche-textcontent.html" method="post">
+									<input type="hidden" name="tag" value="transport en commun" />
+									<input type="hidden" name="jcrMethodToCall" value="GET" /> 
+									<input type="submit" value="transport en commun" class="btn-link submit" />
+								</form>
+							
+								<form action="/accueil/le-departement/routes-environnement--territoire/se-deplacer-autrement/transport-en-commun/corps/transport-en-commun.recherche-textcontent.html" method="post">
+									<input type="hidden" name="tag" value="bus scolaire" />
+									<input type="hidden" name="jcrMethodToCall" value="GET" /> 
+									<input type="submit" value="bus scolaire" class="btn-link submit" />
+								</form>
+							
+								<form action="/accueil/le-departement/routes-environnement--territoire/se-deplacer-autrement/transport-en-commun/corps/transport-en-commun.recherche-textcontent.html" method="post">
+									<input type="hidden" name="tag" value="région" />
+									<input type="hidden" name="jcrMethodToCall" value="GET" /> 
+									<input type="submit" value="région" class="btn-link submit" />
+								</form>
+							
+								<form action="/accueil/le-departement/routes-environnement--territoire/se-deplacer-autrement/transport-en-commun/corps/transport-en-commun.recherche-textcontent.html" method="post">
+									<input type="hidden" name="tag" value="keolis" />
+									<input type="hidden" name="jcrMethodToCall" value="GET" /> 
+									<input type="submit" value="keolis" class="btn-link submit" />
+								</form>
+							
+					</div>
+				<div class="cal_partage ">
+
+	Partager cet article : 
+	<div class="visible-xs-block"></div>
+
+	
+
+	<a href="mailto:?body=https%3a%2f%2fwww.calvados.fr%2faccueil%2fle-departement%2froutes-environnement--territoire%2fse-deplacer-autrement%2ftransport-en-commun.html" title="Partager par email">
+		
+		<img src="/modules/calvados-redactionnel/images/logo-mail-couleur1.png" role="presentation" aria-hidden="true" alt="Logo E-mail" />
+	</a>
+
+
+
+	
+
+	<a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.calvados.fr%2faccueil%2fle-departement%2froutes-environnement--territoire%2fse-deplacer-autrement%2ftransport-en-commun.html&t=Transport+en+commun" target="_blank" title="Partager sur facebook">
+		
+		<img src="/modules/calvados-redactionnel/images/logo-facebook-couleur1.png" role="presentation" aria-hidden="true" alt="Logo Facebook" />
+	</a>
+
+	
+
+	<a href="https://twitter.com/intent/tweet?text=Transport+en+commun&url=https%3a%2f%2fwww.calvados.fr%2faccueil%2fle-departement%2froutes-environnement--territoire%2fse-deplacer-autrement%2ftransport-en-commun.html" target="_blank" title="Partager sur twitter">
+		
+		<img src="/modules/calvados-redactionnel/images/logo-twitter-couleur1.png" role="presentation" aria-hidden="true" alt="Logo Twitter" />
+	</a>
+
+	
+
+	<a href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.calvados.fr%2faccueil%2fle-departement%2froutes-environnement--territoire%2fse-deplacer-autrement%2ftransport-en-commun.html&mini=true" target="_blank" title="Partager sur linkedin">
+		
+		<img src="/modules/calvados-redactionnel/images/logo-linkedin-couleur1.png" role="presentation" aria-hidden="true" alt="Logo linkedin" />
+	</a>
+
+	
+
+</div>
+            </footer>
+        </div>        
+    </article>
+    
+
+
+	<div class="remonteRedactionnel">
+			<section class="cal_autres-articles" aria-label="Autres actualités">
+				<div class="cal_biseau superieur">
+					<img src="/modules/calvados-redactionnel/images/biseau-blanc-transparent.png" role="presentation" aria-hidden="true" alt="" />
+				</div>
+				<div class="container">
+					<div class="cal_titre">Autres actualités</div>
+					<div class="row">
+						
+							<div class="col-sm-3">
+								
+
+
+<a href="/actu/podiums-et-trophees-decouvrez-les-laureats-23022019" title="Aller sur la page : Podiums & Trophées : découvrez les sportifs lauréats" aria-label="Consulter : Podiums &amp; Trophées : découvrez les sportifs lauréats">
+	
+			<div class="cal_type fond-couleur3-transparent-80">
+				
+					<div>Sport</div>
+				
+			</div>
+		
+
+	<div class="cal_titre-article">
+		Podiums &amp; Trophées : découvrez les sportifs lauréats
+	</div>
+
+	
+		<div class="cal_date">
+			samedi 23 février
+		</div>
+	
+</a>
+							</div>
+						
+							<div class="col-sm-3">
+								
+
+
+<a href="/actu/calvados-au-sia-2019" title="Aller sur la page : Le Calvados au Salon International de l'Agriculture 2019" aria-label="Consulter : Le Calvados au Salon International de l&#039;Agriculture 2019">
+	
+			<div class="cal_type fond-couleur3-transparent-80">
+				
+					<div>Agriculture</div>
+				
+			</div>
+		
+			<div class="cal_type fond-couleur3-transparent-80">
+				
+					<div>Territoire</div>
+				
+			</div>
+		
+			<div class="cal_type fond-couleur3-transparent-80">
+				
+					<div>Tourisme</div>
+				
+			</div>
+		
+
+	<div class="cal_titre-article">
+		Le Calvados au Salon International de l&#039;Agriculture 2019
+	</div>
+
+	
+		<div class="cal_date">
+			vendredi 22 février
+		</div>
+	
+</a>
+							</div>
+						
+							<div class="col-sm-3">
+								
+
+
+<a href="/actu/budget-2019-politique-economique" title="Aller sur la page : Vote du budget primitif 2019 : de nouvelles modalités d'intervention au plus près des territoires et des entreprises" aria-label="Consulter : Vote du budget primitif 2019 : de nouvelles modalités d&#039;intervention au plus près des territoires et des entreprises">
+	
+			<div class="cal_type fond-couleur3-transparent-80">
+				
+					<div>Assemblée départementale</div>
+				
+			</div>
+		
+			<div class="cal_type fond-couleur3-transparent-80">
+				
+					<div>Emploi</div>
+				
+			</div>
+		
+			<div class="cal_type fond-couleur3-transparent-80">
+				
+					<div>Territoire</div>
+				
+			</div>
+		
+
+	<div class="cal_titre-article">
+		Vote du budget primitif 2019 : de nouvelles modalités d&#039;intervention au plus près des territoires et des entreprises
+	</div>
+
+	
+		<div class="cal_date">
+			mercredi 06 février
+		</div>
+	
+</a>
+							</div>
+						
+							<div class="col-sm-3">
+								
+
+
+<a href="/actu/budget-2019-plan-departemental-alimentation-durable" title="Aller sur la page : Vote du budget primitif 2019 : un plan départemental d'alimentation durable se dessine" aria-label="Consulter : Vote du budget primitif 2019 : un plan départemental d&#039;alimentation durable se dessine">
+	
+			<div class="cal_type fond-couleur3-transparent-80">
+				
+					<div>Assemblée départementale</div>
+				
+			</div>
+		
+			<div class="cal_type fond-couleur3-transparent-80">
+				
+					<div>Agriculture</div>
+				
+			</div>
+		
+
+	<div class="cal_titre-article">
+		Vote du budget primitif 2019 : un plan départemental d&#039;alimentation durable se dessine
+	</div>
+
+	
+		<div class="cal_date">
+			mercredi 06 février
+		</div>
+	
+</a>
+							</div>
+						
+					</div>
+					
+							<div class="marge-bas-30"></div>
+						
+				</div>
+				<div class="cal_biseau inferieur">
+					<img src="/modules/calvados-redactionnel/images/biseau-transparent-blanc.png" role="presentation" aria-hidden="true" alt="" />
+				</div>
+			</section>
+	</div>
+    
+
+</div><div class="clear"></div><div class="clear"></div>
+
+
+
+
+    <footer>
+
+    <div class="container">
+
+    <div class="row">
+
+
+
+<div class="col-md-3"><div class="address" >
+     <div class="richtext">
+	<p><strong><span style="color:#48b95f;"><span style="font-size:16px;">D&Eacute;PARTEMENT DU CALVADOS</span></span></strong></p>
+
+<p><span style="font-size:12px;">&nbsp;<span style="font-size:14px;">BP 20520 </span></span><span style="font-size:12px;"><span style="font-size:14px;"><br />
+14035 Caen CEDEX 1</span><br />
+<span style="font-size:14px;"><span style="color:#48b95f;">T&eacute;l. :&nbsp;<a href="tel:+33231571414" target="_blank" title="Appeler le Département du Calvados">02 31 57 14 14</a></span></span></span></p>
+
+</div>
+</div>
+
+
+<span>
+	<a class="footerHugeLink" href="/contact">
+	
+	
+		<span class="libelle">Contacter la collectivité</span>	
+		
+	</a>
+</span>
+<div class="clear"></div><div class="clear"></div></div>
+        <div class="col-md-3"><div class="cal_liens" >
+     
+
+
+<span class="footerSmallLink">
+	<a href="/accueil/toute-linfo/actualites.html">
+	
+		<span class="libelle">Actualités</span>	
+		
+	</a>
+</span>
+
+<span class="footerSmallLink">
+	<a href="/accueil/espace-marches-publics.html">
+	
+		<span class="libelle">Marchés publics</span>	
+		
+	</a>
+</span>
+
+<span class="footerSmallLink">
+	<a href="/accueil/toute-linfo/dossiers-1.html">
+	
+		<span class="libelle">Espace presse</span>	
+		
+	</a>
+</span>
+
+<span class="footerSmallLink">
+	<a href="/espace-emploi">
+	
+		<span class="libelle">Espace emploi</span>	
+		
+	</a>
+</span>
+
+<span class="footerSmallLink">
+	<a href="/accueil/faq.html">
+	
+		<span class="libelle">FAQ</span>	
+		
+	</a>
+</span>
+
+<span class="footerSmallLink">
+	<a href="https://sso.calvados.fr/cas/login?service=https://beta.calvados.fr/cms/edit/default/fr/sites/calvados/accueil.html">
+	
+
+	<span class="lnr lnr-lock"></span>
+		<span class="libelle">Accès privé</span>	
+		
+	</a>
+</span>
+<div class="clear"></div><div class="clear"></div>
+</div></div>
+        <div class="col-md-3"><div class="padding-left-30" >
+     <div class="richtext">
+	<p><span style="color: rgb(115, 115, 115); font-family: Raleway, sans-serif; font-size: 14px; font-weight: 600; text-transform: uppercase;">RETROUVEZ-NOUS SUR</span></p>
+
+</div><div class="reseaux-sociaux" >
+     <a href="https://www.facebook.com/so14tellementCalvados/" target="_blank" title="La page Facebook So14 tellement Calvados">
+	
+
+	<img src="/files/live/sites/calvados/files/documents/images/logo-facebook-bleu.png" alt="reference-dimage"  height="36"  width="36" />
+	
+		</a><a href="https://twitter.com/calvadosdep" target="_blank" title="Le compte Twitter du Département du Calvados">
+	
+
+	<img src="/files/live/sites/calvados/files/documents/images/logo-twitter-bleu.png" alt="reference-dimage-1"  height="36"  width="36" />
+	
+		</a><a href="https://www.instagram.com/calvadosdepartement/" title="Le compte Instagram du Département du Calvados">
+	
+
+	<img src="/files/live/sites/calvados/files/documents/images/logo-instagram-bleu.png" alt="reference-dimage-3"  height="36"  width="36" />
+	
+		</a><div class="clear"></div>
+</div><div class="reseaux-sociaux" >
+     
+<a href="https://www.linkedin.com/company/d%C3%A9partementducalvados" target="_blank" title="Le compte Linkedin du Département du Calvados">
+	
+
+	<img src="/files/live/sites/calvados/files/documents/images/logo-linkedin-bleu.png" alt="linkedin"  height="36"  width="36" />
+	
+		</a><a href="https://www.youtube.com/user/CGduCalvados" title="Le compte Youtube du Département du Calvados">
+	
+
+	<img src="/files/live/sites/calvados/files/documents/images/logo-youtube-bleu.png" alt="youtube"  height="36"  width="36" />
+	
+		</a>
+<div class="clear"></div>
+</div>
+
+
+<span class="footerBigLink">
+	<a href="/accueil/newsletter.html">
+	
+
+	<span class="lnr lnr-envelope"></span>
+		<span class="libelle">Newsletter</span>	
+		
+	</a>
+</span>
+<div class="clear"></div><div class="clear"></div>
+</div></div>
+        <div class="col-md-3"><div class="padding-left-30" >
+     <div class="text-center hidden-xs" >
+     <img src="/files/live/sites/calvados/files/documents/images/logo-calvados-vertical-transparent.png" alt="reference-dimage-1"  height="137"  width="168" />
+</div><div class="clear"></div>
+</div></div>
+    <div class="clearfix"></div><div class="copyright" >
+     <div class="richtext">
+	<p><span>&copy; D&eacute;partement du Calvados</span> -&nbsp;<a href="/accueil/sitemap.html" title="Plan du site">Plan du site</a>&nbsp;-&nbsp;<a href="/accueil/mentions-legales.html" title="Mentions légales">Mentions l&eacute;gales </a>- <a href="/accueil/logo-et-charte.html" title="Logo du Département du Calvados et charte d'utilisation">Logo et charte</a></p>
+
+</div>
+</div><div class="richtext">
+	<script type="text/javascript">
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','nxwgt');
+twq('track','PageView');
+</script>
+</div><div class="richtext">
+	<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-127757904-2"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-127757904-2');
+</script>
+</div><div class="clear"></div>
+    </div>    
+
+    </div>
+
+    <div class="clearfix"></div>
+
+
+    </footer><div class="clear"></div><div class="clear"></div><div class="clear"></div>
+</div>
+
+
+
+    <div class="cal_retour-haut fond-noir-transparent-80-2 hidden-xs">
+        <span class="cal_icone lnr lnr-chevron-up"></span>
+        <span class="cal_libelle">Haut de page</span>
+    </div>
+
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+     data-wp-preserve="%3Cscript%20type%3D%22text%2Fjavascript%22%20src%3D%22http%3A%2F%2Fwww.access-man.com%2Fheadpilot%2Fressources%2Fheadpilot-online.js%22%3E%3C%2Fscript%3E"
+     data-mce-resize="false" data-mce-placeholder="1" class="mce-object" width="20" height="20" alt="&lt;script&gt;"
+     title="&lt;script&gt;"/>
+<img style="display: none" src="" id="imageMessageHPOL"/>
+<img style="display: none" src="" id="imageMessageHPO"/>
+
+
+
+</body>
+</html>
