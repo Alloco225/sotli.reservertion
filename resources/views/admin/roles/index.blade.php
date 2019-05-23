@@ -51,32 +51,32 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content bg-normal">
                                             <div class="modal-header bg-sombre">
-                                                <h4 class="modal-title">{{$role->role}}</h4>
+                                                <h4 class="modal-title">{{$role->name}}</h4>
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                             </div>
                                             <div class="modal-body">
                                                 <div class="container">
                                                     <div class="row">
-                                                        <a href="{{url('/dashboard/users/')}}" title="Voir tous les {{$role->role}}s">
-                                                            <h5>{{$role->role}}s</h5>
+                                                        <a href="{{url('/dashboard/users/')}}" title="Voir tous les {{$role->name}}s">
+                                                            <h5>{{$role->name}}s</h5>
                                                         </a>
                                                     </div>
                                                     <div class="container-fluid" style="overflow-y:scroll;height:300px;">
                                                         @php
-                                                            $persons = App\User::where('role_id', $role->id)->orderBy('name')->get();
+                                                            $persons = $role->users;
                                                         @endphp
                                                         @if (count($persons)>0)
                                                             @foreach ($persons as $person)
                                                                 <ul class="nav flex-column">
                                                                     <li class="nav-item">
                                                                         <a href="/dashboard/users/{{$person->id}}" class="nav-link">
-                                                                            {{$person->role}}
+                                                                            {{$person->name}}
                                                                         </a>
                                                                     </li>
                                                                 </ul>
                                                             @endforeach
                                                         @else
-                                                            {{"Aucun ".$role->role." dans la base"}}
+                                                            {{"Aucun ".$role->name." dans la base"}}
                                                         @endif
                                                     </div>
                                                 </div>
@@ -103,14 +103,14 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content bg-normal">
                                             <div class="modal-header bg-sombre">
-                                                <h4 class="modal-title">{{$role->role}}</h4>
+                                                <h4 class="modal-title">{{$role->name}}</h4>
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                             </div>
                                             <div class="modal-body">
                                                 {!!Form::open(['action' => ['RolesController@update', $role->id], 'method' => 'POST'])!!}
                                                     <div class="form-group">
                                                         {{Form::label('role', 'Nom du role')}}
-                                                        {{Form::text('role', $role->role, ['class' => 'form-control', 'required'])}}
+                                                        {{Form::text('role', $role->name, ['class' => 'form-control', 'required'])}}
                                                     </div>
                                                     {{Form::hidden('_method', 'PUT')}}
                                             </div>
@@ -134,7 +134,7 @@
                                                 </div>
                                             </div>
                                             <div class="modal-body">
-                                                Vous allez <span class="delete">supprimer</span> le role {{$role->role}}
+                                                Vous allez <span class="delete">supprimer</span> le role {{$role->name}}
                                             </div>
                                             <div class="modal-footer bg-sombre">
                                                 <div class="container d-flex justify-content-between">
@@ -163,7 +163,7 @@
                                             $('#create_modal').modal('toggle';)
                                         });
                                     </script> --}}
-                                    {{$role->role}}
+                                    {{$role->name}}
                                 </a>
                             </td>
                             <td colspan="" class="text-right">

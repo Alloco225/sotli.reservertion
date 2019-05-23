@@ -63,13 +63,13 @@
                                 <div class="col-sm-6 input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
-                                            <i class="fa fa-map-marker"></i>
+                                            <i class="fa fa-flag"></i>
                                         </span>
                                     </div>
-                                    <select name="ville_depart" id="" class="form-control">
-                                        @if (App\Ville::count()>0)
-                                            <option value="1" disabled selected>--Ville de départ--</option>
-                                            @foreach (App\Ville::orderBy('name')->get() as $ville)
+                                    <select name="depart" id="" class="form-control">
+                                        @if ($villes->count()>0)
+                                            <option value="1" disabled selected>--Depart--</option>
+                                            @foreach ($villes as $ville)
                                                 <option value="{{$ville->id}}">{{$ville->name}}</option>
                                             @endforeach
                                         @else
@@ -77,17 +77,17 @@
                                         @endif
                                     </select>
                                 </div>
-                                <!-- Arrivee -->
+                                <!-- destination -->
                                 <div class="col-sm-6 input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
                                             <i class="fa fa-flag"></i>
                                         </span>
                                     </div>
-                                    <select name="ville_arrivee" id="" class="form-control">
-                                        @if (App\Ville::count()>0)
+                                    <select name="destination" id="" class="form-control">
+                                        @if ($villes->count()>0)
                                             <option value="1" disabled selected>--Destination--</option>
-                                            @foreach (App\Ville::orderBy('name')->get() as $ville)
+                                            @foreach ($villes as $ville)
                                                 <option value="{{$ville->id}}">{{$ville->name}}</option>
                                             @endforeach
                                         @else
@@ -99,15 +99,7 @@
                             <!-- Date Range -->
                             <div class="row form-group">
                                 <div class="col-sm-6">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="fa fa-calendar"></i>
-                                            </span>
-                                        </div>
-                                        <input type="date" name="date_min" class="form-control"
-                                            placeholder="" required>
-                                    </div>
+                                    Date:
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="input-group">
@@ -116,13 +108,13 @@
                                                 <i class="fa fa-calendar"></i>
                                             </span>
                                         </div>
-                                        <input type="date" name="date_max" class="form-control"
-                                            placeholder="">
+                                        <input type="date" name="date" class="form-control"
+                                            placeholder="" required>
                                     </div>
                                 </div>
                             </div>
                             <input type="submit" class="btn bg-orange w-100"
-                                value="Rechercher">
+                                value="Reserver un car">
                         </form>
                     </div> <!-- col-md-5 -->
                     <div class="col-md-5 bg-light py-2 bg-light_orange">
@@ -205,11 +197,11 @@
                     @foreach ($promotions as $promotion)
                         <div class="col-md-3">
                             <div class="card">
-                                <img src="img/{{App\Ville::find($promotion->ville_depart)->first()->image }}" alt=""
+                                <img src="img/{{$promotion->ville_depart->image }}" alt=""
                                     class="card-img-top">
                                 <div class="card-footer">
-                                    <p>A partir de {{$promotion->prix}} Francs</p>
-                                    <p>{{App\Ville::find($promotion->ville_arrivee)->name}}, Cote d'Ivoire</p>
+                                    <p>A partir de {{$promotion->tarif}} Francs</p>
+                                    <p>{{$promotion->ville_destination->name}}, Cote d'Ivoire</p>
                                 </div>
                             </div>
                         </div>

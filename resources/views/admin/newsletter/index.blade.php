@@ -140,12 +140,6 @@
                             <td><?= $i ?><?php $i++; ?></td>
                             <td>
                                 <a href="/dashboard/mails/{{$mail->id}}" data-toggle="modal" data-target="{{'#view_modal_'.$mail->id}}" class="link_">
-                                    {{-- <script>
-                                        $('.link_').on('dblclick', function(){
-                                            var id = $(this).attr('data-target');
-                                            $('#create_modal').modal('toggle';)
-                                        });
-                                    </script> --}}
                                     {{$mail->email}}
                                 </a>
                             </td>

@@ -16,7 +16,7 @@ class QuestionsController extends Controller
     public function index()
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role_id == Role::where('name', 'Amane')->first()->id){
             $questions = Question::orderBy('created_at', 'desc')->get();
             return view('admin.questions.index', ['questions' => $questions]);
         } else {
@@ -32,7 +32,7 @@ class QuestionsController extends Controller
     public function create()
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role_id == Role::where('name', 'Amane')->first()->id){
             return redirect('/dashboard/questions');
         } else {
             return redirect('/');
@@ -70,7 +70,7 @@ class QuestionsController extends Controller
     public function show($id)
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role_id == Role::where('name', 'Amane')->first()->id){
             return redirect('/dashboard/questions');
         } else {
             return redirect('/');
@@ -86,7 +86,7 @@ class QuestionsController extends Controller
     public function edit($id)
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role_id == Role::where('name', 'Amane')->first()->id){
             return redirect('/dashboard/questions');
         } else {
             return redirect('/');
@@ -103,7 +103,7 @@ class QuestionsController extends Controller
     public function update(Request $request, $id)
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role_id == Role::where('name', 'Amane')->first()->id){
             $this->validate($request, ['name' => 'required', 'email' => 'required','question' => 'required',]);
             $question = Question::find($id);
             $question->name = $request->input('name');
@@ -127,7 +127,7 @@ class QuestionsController extends Controller
     public function destroy($id)
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role_id == Role::where('name', 'Amane')->first()->id){
             $question = Question::find($id);
             $question->delete();
 

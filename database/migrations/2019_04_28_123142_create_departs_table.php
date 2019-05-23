@@ -17,10 +17,12 @@ class CreateDepartsTable extends Migration
             Schema::create('departs', function (Blueprint $table) {
                 $table->bigIncrements('id');
                 $table->time('heure');
-
                 $table->unsignedBigInteger('itineraire_id');
-                $table->foreign('itineraire_id')->references('id')->on('itineraires')->onDelete('cascade');
                 $table->timestamps();
+                $table->integer('places')->default(40);
+                // also gotta add de car plate number but gonna do that later
+
+                $table->index('itineraire_id');
             });
         }
     }

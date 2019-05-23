@@ -42,7 +42,7 @@
                         <tr class="bg-normal sticky-top">
                             <th></th>
                             <th>Départ</th>
-                            <th>Arrivée</th>
+                            <th>Destination</th>
                             <th>Tarif</th>
                             <th colspan="3">Départs</th>
                             <th class="text-center">Opérations</th>
@@ -55,7 +55,7 @@
                                         <div class="modal-content bg-normal">
                                             <div class="modal-header bg-sombre">
                                                 <h4 class="modal-title">
-                                                    Itineraire {{App\Ville::find($itineraire->ville_depart)->name." -> ". App\Ville::find($itineraire->ville_arrivee)->name }}
+                                                    Itineraire {{$itineraire->ville_depart->name." -> ". $itineraire->ville_destination->name }}
                                                 </h4>
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                             </div>
@@ -64,29 +64,29 @@
                                                     <div class="container-fluid">
                                                         <div class="row justify-content-between my-1">
                                                             <span>Ville Départ : </span>
-                                                            <span>{{App\Ville::find($itineraire->ville_depart)->name}}</span>
+                                                            <span>{{$itineraire->ville_depart->name}}</span>
                                                         </div>
                                                         <div class="row justify-content-between my-1">
-                                                            <span>Ville Arrivée : </span>
+                                                            <span>Ville Destination : </span>
                                                             <span>
-                                                                {{App\Ville::find($itineraire->ville_arrivee)->name}}
+                                                                {{$itineraire->ville_destination->name}}
                                                             </span>
                                                         </div>
                                                         <div class="row justify-content-between my-1">
-                                                            <span>Prix : </span>
+                                                            <span>Tarif : </span>
                                                             <span>
-                                                                {{$itineraire->prix ." Francs"}}
+                                                                {{$itineraire->tarif ." Francs"}}
                                                             </span>
                                                         </div>
                                                         <div class="row justify-content-between my-1">
-                                                            <span>{{ App\Depart::where('itineraire_id', $itineraire->id)->count() }} Départs :</span>
+                                                            <span>{{ $itineraire->horaires->count() }} Départs :</span>
                                                             <span>
-                                                                @if (App\Depart::where('itineraire_id', $itineraire->id)->count() == 0)
+                                                                @if ($itineraire->horaires->count() == 0)
                                                                     <a href="" class="btn bg-sombre">ajouter</a>
                                                                 @else
-                                                                    @foreach (App\Depart::where('itineraire_id', $itineraire->id)->get() as $depart)
+                                                                    @foreach ($itineraire->horaires as $horaire)
                                                                         <p>
-                                                                            {{$depart->heure ?? "---"}}
+                                                                            {{$horaire->heure ?? "---"}}
                                                                         </p>
                                                                     @endforeach
                                                                 @endif
@@ -119,7 +119,7 @@
                                             <div class="modal-header bg-sombre">
                                                 <h4 class="modal-title container d-flex justify-content-between">
                                                     <span>
-                                                        {{App\Ville::find($itineraire->ville_depart )->name." -> ". App\Ville::find($itineraire->ville_arrivee)->name}}
+                                                        {{$itineraire->ville_depart->name." -> ". $itineraire->ville_destination->name}}
                                                     </span>
                                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                 </h4>
@@ -130,11 +130,11 @@
                                                     <div class="row">
                                                         <div class="col-md">
                                                             {{-- Ville départ --}}
-                                                            {{Form::label('ville_depart', 'Départ')}}
-                                                            <select  class="form-control" name="ville_depart" id="ville_depart">
+                                                            {{Form::label('depart', 'Départ')}}
+                                                            <select  class="form-control" name="depart" id="depart">
                                                                 @if (count($villes) > 0)
-                                                                        <option value="{{$itineraire->ville_depart}}" disaled selected>
-                                                                            {{App\Ville::find($itineraire->ville_depart)->name}}
+                                                                        <option value="{{$itineraire->ville_depart->id}}" disaled selected>
+                                                                            {{$itineraire->ville_depart->name}}
                                                                         </option>
                                                                     @foreach ($villes as $ville)
                                                                         <option value="{{$ville->id}}" title="{{$ville->description}}">
@@ -148,13 +148,13 @@
                                                                 @endif
                                                             </select>
                                                         </div>
-                                                        {{-- Ville arrivée --}}
+                                                        {{-- Ville destination --}}
                                                         <div class="col-md">
-                                                            {{Form::label('ville_arrivee', 'Arrivée')}}
-                                                            <select  class="form-control" name="ville_arrivee" id="ville_arrivee">
+                                                            {{Form::label('destination', 'Destination')}}
+                                                            <select  class="form-control" name="destination" id="destination">
                                                                 @if (count($villes) > 0)
-                                                                        <option value="{{$itineraire->ville_arrivee}}" disaled selected>
-                                                                            {{App\Ville::find($itineraire->ville_arrivee)->name}}
+                                                                        <option value="{{$itineraire->ville_destination}}" disaled selected>
+                                                                            {{$itineraire->ville_destination->name}}
                                                                         </option>
                                                                     @foreach ($villes as $ville)
                                                                         <option value="{{$ville->id}}" title="{{$ville->description}}">
@@ -167,13 +167,13 @@
                                                                         </option>
                                                                 @endif
                                                             </select>
-                                                            {{-- Prix --}}
+                                                            {{-- Tarif --}}
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <label for="prix" class="col-md">
+                                                        <label for="tarif" class="col-md">
                                                             Tarif
-                                                            <input class="form-control" type="number" name="prix" value="{{$itineraire->prix}}">
+                                                            <input class="form-control" type="number" name="tarif" value="{{$itineraire->tarif}}">
                                                         </label>
                                                     </div>
                                                     <div class="row">
@@ -221,7 +221,7 @@
                                                 </div>
                                             </div>
                                             <div class="modal-body">
-                                                Vous allez <span class="delete">supprimer</span> l'itineraire {{App\Ville::find($itineraire->ville_depart )->name." -> ". App\Ville::find($itineraire->ville_arrivee)->name}}
+                                                Vous allez <span class="delete">supprimer</span> l'itineraire {{$itineraire->ville_depart->name." -> ". $itineraire->ville_destination->name}}
                                             </div>
                                             <div class="modal-footer bg-sombre">
                                                 <div class="container d-flex justify-content-between">
@@ -243,29 +243,29 @@
                         <tr>
                             <td><?= $i ?><?php $i++; ?></td>
                             <td>
-                                <a href="/dashboard/ville/{{$itineraire->ville_arrivee}}" data-toggle="modal" data-target="{{'#view_modal_'.$itineraire->id}}" class="link_">
+                                <a href="/dashboard/ville/{{$itineraire->ville_destination}}" data-toggle="modal" data-target="{{'#view_modal_'.$itineraire->id}}" class="link_">
                                     {{-- <script>
                                         $('.link_').on('dblclick', function(){
                                             var id = $(this).attr('data-target');
                                             $('#create_modal').modal('toggle';)
                                         });
                                     </script> --}}
-                                    {{App\Ville::find($itineraire->ville_depart)->name}}
+                                    {{$itineraire->ville_depart->name}}
                                 </a>
                             </td>
                             <td>
-                                <a href="/dashboard/ville/{{$itineraire->ville_arrivee}}" data-toggle="modal" data-target="{{'#view_modal_'.$itineraire->id}}" class="link_">
+                                <a href="/dashboard/ville/{{$itineraire->ville_destination}}" data-toggle="modal" data-target="{{'#view_modal_'.$itineraire->id}}" class="link_">
                                     {{-- <script>
                                         $('.link_').on('dblclick', function(){
                                             var id = $(this).attr('data-target');
                                             $('#create_modal').modal('toggle';)
                                         });
                                     </script> --}}
-                                    {{App\Ville::find($itineraire->ville_arrivee)->name}}
+                                    {{$itineraire->ville_destination->name}}
                                 </a>
                             </td>
                             <td>
-                                {{$itineraire->prix}}
+                                {{$itineraire->tarif}}
                             </td>
                             {{-- Departs --}}
                             @php
@@ -329,8 +329,8 @@
                             <div class="row">
                                 {{-- Ville départ --}}
                                 <div class="form-group col-md">
-                                    {{Form::label('ville_depart', 'Départ')}}
-                                    <select  class="form-control" name="ville_depart" id="ville_depart">
+                                    {{Form::label('depart', 'Départ')}}
+                                    <select  class="form-control" name="depart" id="depart">
                                         @if (count($villes) > 0)
                                                 <option value="" disaled selected>--Ville de départ--</option>
                                             @foreach ($villes as $ville)
@@ -345,12 +345,12 @@
                                         @endif
                                     </select>
                                 </div>
-                                {{-- Ville arrivée --}}
+                                {{-- Ville destination --}}
                                 <div class="col-md">
-                                    {{Form::label('ville_arrivee', 'Arrivée')}}
-                                    <select  class="form-control" name="ville_arrivee" id="ville_arrivee">
+                                    {{Form::label('destination', 'Destination')}}
+                                    <select  class="form-control" name="destination" id="destination">
                                         @if (count($villes) > 0)
-                                                <option value="" disabled selected>--Ville d'arrivée--</option>
+                                                <option value="" disabled selected>--Ville destination--</option>
                                             @foreach ($villes as $ville)
                                                 <option value="{{$ville->id}}" title="{{$ville->description}}">
                                                     {{$ville->name}}
@@ -365,10 +365,10 @@
                                 </div>
                             </div>
                             <div class="row">
-                                {{-- Prix --}}
-                                <label for="prix" class="col-md">
+                                {{-- Tarif --}}
+                                <label for="tarif" class="col-md">
                                     Tarif
-                                    <input  class="form-control" type="number" name="prix">
+                                    <input  class="form-control" type="number" name="tarif">
                                 </label>
                             </div>
                             <div class="row">

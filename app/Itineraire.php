@@ -6,19 +6,24 @@ use Illuminate\Database\Eloquent\Model;
 
 class Itineraire extends Model
 {
-    //
+    protected $guarded = [];
+    
     // protected $fillable = [
-    //     "ville_depart", "ville_arrivee",
+    //     "ville_depart", "ville_destination",
     //     "prix", 
     //     "depart_1", "depart_2", "depart_3",
     //     "depart_dernier",
     // ];
     public function ville_depart()
     {
-        return $this->belongsTo('App\Ville');
+        return $this->belongsTo(Ville::class, 'depart');
     }
-    public function ville_arrivee()
+    public function ville_destination()
     {
-        return $this->belongsTo('App\Ville');
+        return $this->belongsTo(Ville::class, 'destination');
+    }
+    public function horaires()
+    {
+        return $this->hasMany(Depart::class);
     }
 }

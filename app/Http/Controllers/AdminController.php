@@ -4,6 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Role;
+use App\Ville;
+use App\Itineraire;
+use App\Depart;
+use App\Question;
+use App\Newsletter;
+use App\User;
+use App\DepartVoyageur;
 
 class AdminController extends Controller
 {
@@ -20,8 +27,11 @@ class AdminController extends Controller
     public function index()
     {
         // Fetch 'em all ! \(^^)/
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
-            return view('admin.dashboard');
+        if(auth()->user()->role->name == 'Amane'){
+            $villes = Ville::all();
+            $itineraires = Itineraire::all();
+            return view('admin.dashboard', 
+                    compact('villes', 'itineraires'));
         } else {
             return redirect('/');
         }

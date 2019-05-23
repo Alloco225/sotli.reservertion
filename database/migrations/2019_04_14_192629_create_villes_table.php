@@ -18,6 +18,7 @@ class CreateVillesTable extends Migration
                 $table->bigIncrements('id');
                 $table->string('name')->unique();
                 $table->text('description')->nullable();
+                $table->string('image')->nullable();
                 $table->timestamps();
             });
         }

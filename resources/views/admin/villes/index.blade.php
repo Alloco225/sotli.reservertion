@@ -60,21 +60,14 @@
                                                 </p>
                                                 <div class="container">
                                                     <div class="row">
-                                                        <a href="{{url('/dashboard/plans/')}}" title="Voir tous les plans de la ville {{$ville->name}}">
-                                                            <h5>Plans dans cette ville</h5>
+                                                        <a href="{{url('/dashboard/plans/')}}" title="Voir tous les itineraires de la ville {{$ville->name}}">
+                                                            <h5>Itineraires {{ $ville->name }} -></h5>
                                                         </a>
                                                     </div>
                                                     <div class="container-fluid" style="overflow-y:scroll;height:300px;">
-                                                        list <br/>
-                                                        list <br/>
-                                                        list <br/>
-                                                        list <br/>
-                                                        list <br/>
-                                                        list <br/>
-                                                        list <br/>
-                                                        list <br/>
-                                                        list <br/>
-                                                        list <br/>
+                                                        @foreach ($ville->depart_itineraires as $itineraire)
+                                                            <p>{{$ville->name ." -> ". $itineraire->ville_destination->name}}</p>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>

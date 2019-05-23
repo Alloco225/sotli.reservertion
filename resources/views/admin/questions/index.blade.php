@@ -55,14 +55,13 @@
                                                 <p>
                                                     {{$question->company ?? "Pas de compagnie"}}
                                                 </p>
-                                                <p class="lead">
+                                                <p>
                                                     {{$question->question}}
                                                 </p>
                                             </div>
                                             <div class="modal-footer bg-sombre">
                                                 <div class="container d-flex justify-content-between">
                                                     <span>
-                                                        <a href="#" class="btn btn-warning" data-toggle="modal" data-target="{{'#edit_modal_'.$question->id}}" data-dismiss="modal">Editer</a>
                                                         <a href="#" class="btn btn-danger" data-toggle="modal" data-target="{{'#delete_modal_'.$question->id}}" data-dismiss="modal">
                                                             Supprimer
                                                         </a>
@@ -140,9 +139,6 @@
                                             <i class="fa fa-eye"></i>Voir
                                         </a>
                                     <span>
-                                        <a href="/dashboard/questions/{{$question->id}}/edit" class="btn btn-warning" data-toggle="modal" data-target="{{'#edit_modal_'.$question->id}}">
-                                            <i class="fa fa-pencil"></i>Modifier
-                                        </a>
                                         <a href="#" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="{{'#delete_modal_'.$question->id}}">
                                             Supprimer
                                         </a>

@@ -53,11 +53,12 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     
-                                    @if (App\Role::find(Auth::user()->role_id)->role == 'Amane')
+                                    @if (Auth::user()->role->name == 'Amane')
                                         <a href="{{url('/dashboard')}}" class="dropdown-item">
                                             Dashboard
                                         </a>
                                     @endif
+                                    <a href="/home" class="dropdown-item">Mon profile</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">

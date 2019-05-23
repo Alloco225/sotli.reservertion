@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Ville;
 use App\Role;
+use App\Itineraire;
 
 class VillesController extends Controller
 {
@@ -16,7 +17,8 @@ class VillesController extends Controller
     public function index()
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role->name == 'Amane'){
+            $itineraires = Itineraire::all();
             $villes = Ville::orderBy('name')->get();
             return view('admin.villes.index', ['villes' => $villes]);
         } else {
@@ -32,7 +34,7 @@ class VillesController extends Controller
     public function create()
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role->name == 'Amane'){
             return redirect('/dashboard/villes');;
         } else {
             return redirect('/');
@@ -48,7 +50,7 @@ class VillesController extends Controller
     public function store(Request $request)
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role->name == 'Amane'){
             $this->validate($request, ['name' => 'required']);
             if(Ville::where('name', $request->input('name'))->count() == 0){
                 $ville = new Ville;
@@ -73,7 +75,7 @@ class VillesController extends Controller
     public function show($id)
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role->name == 'Amane'){
             return redirect('/dashboard/villes');
         } else {
             return redirect('/');
@@ -89,7 +91,7 @@ class VillesController extends Controller
     public function edit($id)
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role->name == 'Amane'){
             return redirect('/dashboard/villes');
         } else {
             return redirect('/');
@@ -106,7 +108,7 @@ class VillesController extends Controller
     public function update(Request $request, $id)
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role->name == 'Amane'){
             $this->validate($request, ['name' => 'required']);
             $ville = Ville::find($id);
             $ville->name = $request->input('name');
@@ -127,7 +129,7 @@ class VillesController extends Controller
     public function destroy($id)
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role->name == 'Amane'){
             $ville = Ville::find($id);
             $ville->delete();
             return redirect('/dashboard/villes');

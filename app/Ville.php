@@ -7,10 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Ville extends Model
 {
     //
-    protected $fillable = ["name"];
+    // protected $fillable = ["name"];
+    protected $guarded = [];
     
-    public function itineraires()
+    
+    public function depart_itineraires()
     {
-        return $this->hasMany('App\Itineraire');
+        return $this->hasMany(Itineraire::class, 'depart');
+    }
+    public function destination_itineraires()
+    {
+        return $this->hasMany(Itineraire::class, 'destination');
     }
 }

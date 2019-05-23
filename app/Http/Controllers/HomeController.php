@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Itineraire;
-use App\Voyage;
+use App\DepartVoyageur;
 
 class HomeController extends Controller
 {

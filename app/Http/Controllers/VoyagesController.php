@@ -18,8 +18,8 @@ class VoyagesController extends Controller
     public function index()
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
-            $voyageurs = User::where('role_id', Role::where('role', 'Voyageur')->first()->id)->orderBy('name')->get();
+        if(auth()->user()->role_id == Role::where('name', 'Amane')->first()->id){
+            $voyageurs = User::where('role_id', Role::where('name', 'Voyageur')->first()->id)->orderBy('name')->get();
             $voyages = Voyage::orderBy('itineraire_id')->get();
             $itineraires = Itineraire::orderBy('ville_depart')->get();
             return view('admin.voyages.index', ['voyages' => $voyages, 'itineraires' => $itineraires]);
@@ -36,7 +36,7 @@ class VoyagesController extends Controller
     public function create()
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role_id == Role::where('name', 'Amane')->first()->id){
             return redirect('/dashboard/voyages');;
         } else {
             return redirect('/');
@@ -52,7 +52,7 @@ class VoyagesController extends Controller
     public function store(Request $request)
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role_id == Role::where('name', 'Amane')->first()->id){
             $this->validate($request, ['itineraire_id' => 'required','date' => 'required','depart' => 'required',]);
             $voyage = new Voyage;
             $voyage->user_id = auth()->user()->id;
@@ -75,7 +75,7 @@ class VoyagesController extends Controller
     public function show($id)
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role_id == Role::where('name', 'Amane')->first()->id){
             return redirect('/dashboard/voyages');
         } else {
             return redirect('/');
@@ -85,9 +85,9 @@ class VoyagesController extends Controller
     public function addVoyageur(Request $request)
     {
         
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role_id == Role::where('name', 'Amane')->first()->id){
             // $this->validate($request, ['itineraire_id' => 'required','date' => 'required','depart' => 'required',]);
-            // $voyageurs = User::where('role_id', Role::where('role', 'Voyageur')->first()->id)->orderBy('name')->get();
+            // $voyageurs = User::where('role_id', Role::where('name', 'Voyageur')->first()->id)->orderBy('name')->get();
             // foreach ($request->input('Voyageur')) {
             //     # code...
             // }            
@@ -112,7 +112,7 @@ class VoyagesController extends Controller
     public function edit($id)
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role_id == Role::where('name', 'Amane')->first()->id){
             return redirect('/dashboard/voyages');
         } else {
             return redirect('/');
@@ -129,7 +129,7 @@ class VoyagesController extends Controller
     public function update(Request $request, $id)
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role_id == Role::where('name', 'Amane')->first()->id){
             $this->validate($request, ['itineraire_id' => 'required','date' => 'required','depart' => 'required',]);
             $voyage = Voyage::find($id);
             $voyage->user_id = auth()->user()->id;
@@ -152,7 +152,7 @@ class VoyagesController extends Controller
     public function destroy($id)
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role_id == Role::where('name', 'Amane')->first()->id){
             $voyage = Voyage::find($id);
             $voyage->delete();
             return redirect('/dashboard/voyages');

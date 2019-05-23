@@ -1,3 +1,6 @@
+@php
+    namespace App;
+@endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -66,45 +69,45 @@
                             <li class="nav-item">
                             <a href="{{url('/dashboard/itineraires')}}" class="nav-link ">
                                     <span>Itineraires</span>
-                                    <span class="badge bg-normal">{{App\Itineraire::count()}}</span>
+                                    <span class="badge bg-normal">{{Itineraire::count()}}</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{url('/dashboard/newsletter')}}" class="nav-link ">
                                     <span>Mails</span>
-                                    <span class="badge bg-normal">{{App\Newsletter::count()}}</span>
+                                    <span class="badge bg-normal">{{Newsletter::count()}}</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{url('/dashboard/questions')}}" class="nav-link ">
                                     <span>Questions</span>
-                                    <span class="badge bg-normal">{{App\Question::count()}}</span>
+                                    <span class="badge bg-normal">{{Question::count()}}</span>
                                 </a>
                             </li>
                             
                             <li class="nav-item">
                                 <a href="{{url('/dashboard/roles')}}" class="nav-link ">
                                     <span>Roles</span>
-                                    <span class="badge bg-normal">{{App\Role::count()}}</span>
+                                    <span class="badge bg-normal">{{Role::count()}}</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{url('/dashboard/villes')}}" class="nav-link "><span>Villes</span>
-                                    <span class="badge bg-normal">{{App\Ville::count()}}</span>
+                                    <span class="badge bg-normal">{{Ville::count()}}</span>
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a href="{{url('/dashboard/voyageurs')}}" class="nav-link ">
                                     <span>Voyageurs</span>
-                                    <span class="badge bg-normal">{{App\User::where('role_id', App\Role::where('role', 'Voyageur')->first()->id)->get()->count()}}</span>
+                                    <span class="badge bg-normal">{{Voyageurs::count()}}</span>
                                 </a>
-                            </li>
-                            <li class="nav-item">
+                            </li> --}}
+                            {{-- <li class="nav-item">
                                 <a href="{{url('/dashboard/voyages')}}" class="nav-link ">
                                     <span>Voyages</span>
-                                    <span class="badge bg-normal">{{App\Voyage::count()}}</span>
+                                    <span class="badge bg-normal">{{Voyage::count()}}</span>
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </div>

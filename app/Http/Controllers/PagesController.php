@@ -15,9 +15,11 @@ class PagesController extends Controller
     // Index
     public function index()
     {
-        $promotions = Itineraire::orderBy('prix')->get()->take(3);
+        $promotions = Itineraire::orderBy('tarif')->get()->take(3);
+        // dd($promotions);
         $destinations = Ville::all()->take(3);
-        return view('welcome', ['promotions' => $promotions, 'destinations' =>$destinations]);
+        $villes = Ville::orderBy('name')->get();
+        return view('welcome', compact('promotions', 'destinations', 'villes'));
     }
     // search
     public function search(Request $request)

@@ -15,8 +15,8 @@ class RolesController extends Controller
     public function index()
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
-            $roles = Role::orderBy('role')->get();
+        if(auth()->user()->role_id == Role::where('name', 'Amane')->first()->id){
+            $roles = Role::orderBy('name')->get();
             return view('admin.roles.index', ['roles' => $roles]);
         } else {
             return redirect('/');
@@ -31,7 +31,7 @@ class RolesController extends Controller
     public function create()
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role_id == Role::where('name', 'Amane')->first()->id){
             return redirect('/dashboard/roles');;
         } else {
             return redirect('/');
@@ -47,11 +47,11 @@ class RolesController extends Controller
     public function store(Request $request)
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
-            $this->validate($request, ['role' => 'required']);
-            $role = new Role;
-            $role->role = $request->input('role');
-            $role->save();
+        if(auth()->user()->role_id == Role::where('name', 'Amane')->first()->id){
+            $this->validate($request, ['name' => 'required']);
+            $name = new Role;
+            $name->name = $request->input('name');
+            $name->save();
             return redirect('/dashboard/roles');
         } else {
             return redirect('/');
@@ -67,7 +67,7 @@ class RolesController extends Controller
     public function show($id)
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role_id == Role::where('name', 'Amane')->first()->id){
             return redirect('/dashboard/roles');
         } else {
             return redirect('/');
@@ -83,7 +83,7 @@ class RolesController extends Controller
     public function edit($id)
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
+        if(auth()->user()->role_id == Role::where('name', 'Amane')->first()->id){
             return redirect('/dashboard/roles');
         } else {
             return redirect('/');
@@ -100,11 +100,11 @@ class RolesController extends Controller
     public function update(Request $request, $id)
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
-            $this->validate($request, ['role' => 'required']);
-            $role = Role::find($id);
-            $role->role = $request->input('role');
-            $role->save();
+        if(auth()->user()->role_id == Role::where('name', 'Amane')->first()->id){
+            $this->validate($request, ['name' => 'required']);
+            $name = Role::find($id);
+            $name->name = $request->input('name');
+            $name->save();
             return redirect('/dashboard/roles');
         } else {
             return redirect('/');
@@ -120,9 +120,9 @@ class RolesController extends Controller
     public function destroy($id)
     {
         //
-        if(auth()->user()->role_id == Role::where('role', 'Amane')->first()->id){
-            $role = Role::find($id);
-            $role->delete();
+        if(auth()->user()->role_id == Role::where('name', 'Amane')->first()->id){
+            $name = Role::find($id);
+            $name->delete();
             return redirect('/dashboard/roles');
         } else {
             return redirect('/');
